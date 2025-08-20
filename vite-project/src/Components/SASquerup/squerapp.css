@@ -1,0 +1,183 @@
+* {
+  box-sizing: border-box;
+}
+.squerup {
+  width: 83.5%;
+  max-width: 1440px;
+  padding: 50px 161px 50px 163px;
+  /*padding:clamp(20px, 4vw, 50px) clamp(16px, 8vw, 163px);*/
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  justify-content: flex-start;
+  gap: 40px;
+  /*gap: gap: clamp(20px, 2.5vw, 40px);*/
+}
+
+.squerup-content {
+  width: 93.73%;
+  padding: 0px 50px 0 50px;
+  /*padding: 0 clamp(12px, 3vw, 50px);*/
+  display: flex;
+  flex-direction: column;
+  text-align:start;
+  gap: 14px;
+  
+}
+
+.squerup-title {
+  font-weight: 600px;
+  color: #FFFFFF;
+  white-space: normal;                /* يسمح باللف عند الشاشات الصغيرة */
+  max-width: 920px;                      /* منع الامتداد الزائد على الشاشات الواسعة */
+
+
+}
+
+.squerup-subtitle {
+  font-weight: 400px;
+  font-size: 18px;
+  white-space: nowrap;
+  color: #E6E6E6;
+
+
+}
+
+.squerup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    padding: 14px 12px;
+    border: 1px solid #262626;
+    background: #262626;
+    border-radius: 8px;
+    /*margin-left:50px ;*/
+    max-width: 362px;
+}
+
+.container-subtitle {
+  font-weight: 400px;
+  font-size: 22px;
+  color:#FFFFFF;
+  text-align:center;
+  background: #262626;
+  width: 100%;
+}
+
+
+
+/* ----------- Responsive Breakpoints ----------- */
+
+@media screen and (max-width: 1440px) {
+  .squerup {
+    padding: 60px 80px 50px 80px;
+  }
+
+  .squerup-title {
+    font-size: 38px;
+  }
+
+  .squerup-subtitle {
+    font-size: 16px;
+  }
+
+  .container-subtitle {
+    font-size: 18px;
+  }
+}
+.squerup-container{
+    
+}
+
+@media screen and (max-width: 992px) {
+  .squerup {
+
+    
+    gap: 24px;
+    align-items: flex-start;
+    text-align: start;
+  }
+
+  .squerup-title {
+    font-size: 28px;
+    margin: 0;
+  }
+
+  .squerup-subtitle {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .squerup-container {
+    width: 100%;
+    max-width: 362px;
+    margin: 0 auto;
+    padding: 14px 12px;
+    border: 1px solid #262626;
+    background: #262626;
+    border-radius: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .container-subtitle {
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+    .squerup {
+    
+    gap: 40px;
+  }
+  .squerup-content {
+    padding: 0; /* خلي النص ياخذ المساحة كاملة */
+  }
+
+ .squerup-subtitle {
+  white-space: normal;
+  word-break: break-word; /* لضمان الكسر إذا كانت الكلمة طويلة */
+}
+  
+  .squerup-container {
+    
+    padding: 12px;
+    width: 100%;       /* عرض كامل */
+    margin: 0 auto;
+    white-space: nowrap;
+  }
+  .container-subtitle {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+}
+@media screen and (max-width: 390px) {
+  .squerup-content {
+    padding: 0;
+    width: 100%;
+  }
+  .squerup-container {
+    width: 100%;
+    max-width: 324px;
+    height: 39px;
+    margin: 0 auto;
+    padding: 10px;
+    gap: 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .container-subtitle {
+    font-size: 14px;
+    white-space: normal;
+    word-break: break-word;
+    text-align: center;
+  }
+}
+
