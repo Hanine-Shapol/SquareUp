@@ -15,16 +15,16 @@
     --myprimary-whitespacing: 162px;
 }
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    @font-face {
-    font-family: 'Inter';
-    src: url('/assets/fonts/Inter-Thin.ttf') format('truetype');
-    font-weight: 100;
+@font-face {
+font-family: 'Inter';
+src: url('/assets/fonts/Inter-Thin.ttf') format('truetype');
+font-weight: 100;
 }
 
 @font-face {
@@ -130,10 +130,10 @@
     font-weight: 900;
 }
 
-    .lm_whitespacing_x {
-        padding-left: var(--myprimary-whitespacing);
-        padding-right: var(--myprimary-whitespacing);
-    }
+.lm_whitespacing_x {
+    padding-left: var(--myprimary-whitespacing);
+    padding-right: var(--myprimary-whitespacing);
+}
 
 
     @media screen and (max-width: 1440px) {

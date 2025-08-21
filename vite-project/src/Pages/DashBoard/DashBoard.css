@@ -1,0 +1,7 @@
+h1{
+    display: flex;
+    justify-content: center;
+    color: var(--MainFontColor);
+    color: var(--IDentity_color);
+    margin: 50px 0px;
+}
