@@ -1,3 +1,5 @@
+import { Link, Outlet } from "react-router-dom"
+import RDHero from "../../components/RDHero/RDHero"
 
 import React, { useState, useEffect } from "react";
 import MmFAQCards from "../../Components/MmFAQCards/MmFAQCards";
@@ -70,6 +72,23 @@ const defaultCards = [
 ];
 
 const Home = () => {
+<<<<<<< HEAD
+    
+    return (
+        <>
+            <RDHero
+            title ={"A Digital Product Studio that will Work"}
+            description ={<>For <span> Startups </span> , <span> Enterprise leaders </span> , <span> Enterprise leaders </span> and <span> Social Good</span></>}
+            btn1 ={{Link : "/Work", text : "Our Works"}}
+            btn2 ={{Link : "/ContactUs", text : "Contact Us"}}
+            />
+
+            <Outlet/>
+        </>
+    )
+}
+=======
+>>>>>>> 6318f6ac15b6bcc62d9f8f9df2a3b93057e04c37
 
   const [cards, setCards] = useState(() => {
     const storedCards = localStorage.getItem("cards");
