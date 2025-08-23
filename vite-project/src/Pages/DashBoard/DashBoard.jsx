@@ -1,6 +1,9 @@
 import './DashBoard.css'
 import RDProcessPageCrud from '../../components/RDProcessPageCrud/RDProcessPageCrud'
 import RDAboutPageCrud from '../../components/RDAboutPageCrud/RDAboutPageCrud'
+import MmContactUsDashboard from "../../Components/MmContactUsDashbord/MmContactUsDashboard"
+import MmWorkDashboard from "../../Components/MmWorkDashboard/MmWorkDashboard"
+
 
 import React, { useState, useEffect } from "react";
 import HSH_FAQCRUD from "../../Components/HSH_FAQCRUD/HSH_FAQCRUD";
@@ -126,26 +129,18 @@ const Dashboard = () => {
   }, [cards]);
 
   return (
-<<<<<<< HEAD
     <div className='lm_whitespacing_x'>
         <h2>At SquareUp Crud</h2>
         <RDProcessPageCrud />
         <h2>Our Story Crud</h2>
         <RDAboutPageCrud/>
-    </div>
-)
-}
-
-export default DashBoard
-
-
-=======
-    <div className="dashboard-container lm_whitespacing_x">
-      <HSH_CardCRUD  cards={cards} setCards={setCards} />
+        <h1>DashBoard</h1>
+        <MmWorkDashboard />
+        <MmContactUsDashboard />
+    <HSH_CardCRUD  cards={cards} setCards={setCards} />
       <HSH_FAQCRUD  faqData={faqData} setFaqData={setFaqData} />
     </div>
-  );
-};
+)
+export default DashBoard;
 
-export default Dashboard;
->>>>>>> 6318f6ac15b6bcc62d9f8f9df2a3b93057e04c37
+
