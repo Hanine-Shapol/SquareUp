@@ -1,3 +1,5 @@
+import MmContactUsDashboard from "../../Components/MmContactUsDashbord/MmContactUsDashboard"
+import MmWorkDashboard from "../../Components/MmWorkDashboard/MmWorkDashboard"
 
 import React, { useState, useEffect } from "react";
 import HSH_FAQCRUD from "../../Components/HSH_FAQCRUD/HSH_FAQCRUD";
@@ -123,6 +125,11 @@ const Dashboard = () => {
   }, [cards]);
 
   return (
+
+    <div>
+      <h1>DashBoard</h1>
+      <MmWorkDashboard />
+      <MmContactUsDashboard />
     <div className="dashboard-container lm_whitespacing_x">
       <HSH_CardCRUD  cards={cards} setCards={setCards} />
       <HSH_FAQCRUD  faqData={faqData} setFaqData={setFaqData} />
