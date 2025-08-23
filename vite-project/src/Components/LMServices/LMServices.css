@@ -24,7 +24,6 @@
     .lm-card-paragraph{
         font-size: 18px;
         color:var(--MainFontColor);
-        /* margin-bottom: 104px; */
     }
 
     /* زر */
@@ -32,13 +31,13 @@
         padding: 18px 16px;
         border-radius: 8px;
         text-align: center;
-        background-color: #262626;
+        background-color: var(--SecondBGColor);
         margin-top: auto;
     }
     .lm-link{
         text-decoration: none;
         text-align: center;
-        background-color: #262626;
+        background-color: var(--SecondBGColor);
         font-family: 'Barlow';
         font-size: 18px;
         font-weight: 500;
@@ -70,10 +69,8 @@
         font-size: 26px;
         font-weight: 500;
         color:var(--MainFontColor);
-        /* margin-bottom: 0px; */
     }
 
-    /*  حالة الأيقونة والعنوان جنب بعض */
     .lm-container.horizontal {
         display: flex;
         align-items: center;
@@ -90,7 +87,7 @@
 
 /* نفس الكرت */
 .lm-card{
-    border: 1px solid #262626;
+    border: 1px solid var(--SecondBGColor);
     display: flex;
     flex-direction: column;
 }
@@ -99,9 +96,15 @@
 .lm-card-img{
     width: 88px;
     height: 88px;
-    background:linear-gradient(to bottom, #9dff0005, #242424);
+    background: 
+    linear-gradient(225deg, #9dff0009 0%, transparent 100%),
+    linear-gradient(45deg, #242424 0%, transparent 100%);
+    /* background: 
+    conic-gradient(from 45deg at 0% 0%, #9dff001f 0deg, rgba(158,255,0,0) 90deg),
+    linear-gradient(to bottom, #242424 0%, rgba(36,36,36,0) 100%); */
     border-radius: 10px;
-    border: 1px solid #262626;
+    border: 1px solid var(--ColorFooterIcon);
+    /* border: 1px solid linear-gradient(to bottom, #2E2E2E 0%, transparent 100%),; */
     padding: 24px;
     margin-bottom: 40px;
 }
@@ -167,7 +170,6 @@
             font-size: 20px;
         }
 
-        /*  حالة الأيقونة والعنوان جنب بعض */
         .lm-container.horizontal {
             gap: 14px;
             margin-bottom: 30px;
@@ -243,7 +245,6 @@
             font-size: 20px;
         }
 
-        /*  حالة الأيقونة والعنوان جنب بعض */
         .lm-container.horizontal {
             margin-bottom: 24px;
         }

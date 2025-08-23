@@ -17,13 +17,13 @@ const LMServicesCrad = () => {
     const formRef = useRef(null);
     const navigate = useNavigate();
 
-    // قراءة فقط (بدون زرع افتراضيات)
     useEffect(() => {
         const raw = localStorage.getItem(STORAGE_KEY);
         if (raw) {
         try {
             setRows(JSON.parse(raw));
-        } catch {
+        } 
+        catch {
             setRows([]);
         }
         }
@@ -44,18 +44,15 @@ const LMServicesCrad = () => {
         if (!form.title.trim() || !form.paragraph.trim()) return;
 
         if (form.id) {
-        // تعديل
         const updated = rows.map((r) => (r.id === form.id ? form : r));
         persist(updated);
-        } else {
-        // إضافة
+        } 
+        else {
         const newRow = { ...form, id: Date.now(), btn: form.btn || "learn more" };
         persist([...rows, newRow]);
         }
-        // Reset
-        setForm({ id: null, image: "", title: "", paragraph: "", btn: "learn more" });
 
-        // بعد العملية ننتقل للهوم
+        setForm({ id: null, image: "", title: "", paragraph: "", btn: "learn more" });
         navigate("/");
     };
 
@@ -75,7 +72,6 @@ const LMServicesCrad = () => {
             ? { id: null, image: "", title: "", paragraph: "", btn: "learn more" }
             : f
         );
-        // بعد الحذف نرجع للهوم
         navigate("/");
     };
 
@@ -84,7 +80,7 @@ const LMServicesCrad = () => {
     };
 
     return (
-        <div>
+        <div >
         {/* الفورم */}
         <form ref={formRef} className="lm-form" onSubmit={onSubmit}>
             <label>
@@ -102,6 +98,7 @@ const LMServicesCrad = () => {
                     reader.readAsDataURL(file);
                 }
                 }}
+                style={{backgroundColor: "var(--IDentity_color)", color: "var(--ColorBlack)" }}
             />
             </label>
 
@@ -131,7 +128,7 @@ const LMServicesCrad = () => {
             <div style={{ display: "flex", gap: "10px" }}>
             <button type="submit">{form.id ? "Update" : "Add"}</button>
             {form.id && (
-                <button type="button" onClick={onCancel}>
+                <button type="button" onClick={onCancel} style={{backgroundColor: "var(--Colorred)", color: "var(--MainFontColor)" }}>
                 Cancel
                 </button>
             )}
@@ -143,10 +140,10 @@ const LMServicesCrad = () => {
             <table className="lm-table">
             <thead>
                 <tr>
-                <th>Image</th>
-                <th>Title</th>
-                <th>Paragraph</th>
-                <th>Actions</th>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Paragraph</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -165,7 +162,7 @@ const LMServicesCrad = () => {
                     <button type="button" onClick={() => onEdit(r)}>
                         Edit
                     </button>
-                    <button type="button" onClick={() => onDelete(r.id)}>
+                    <button type="button" onClick={() => onDelete(r.id)} style={{backgroundColor: "var(--Colorred)", color: "var(--MainFontColor)" }}>
                         Delete
                     </button>
                     </td>

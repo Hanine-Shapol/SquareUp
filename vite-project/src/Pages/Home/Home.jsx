@@ -132,7 +132,7 @@ const Home = () => {
             title={item.title}
             paragraph={item.paragraph}
             showButton={false}
-            horizontal={true} // فرق الترتيب: أيقونة + عنوان جنب بعض
+            horizontal={true} 
           />
         ))}
       </div>

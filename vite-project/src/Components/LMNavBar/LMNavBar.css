@@ -12,7 +12,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #262626;
+    border-bottom: 1px solid var(--SecondBGColor);
     position: fixed;
     background-color: var(--MainBGColor);
     z-index: 6;
@@ -28,7 +28,7 @@ nav{
         }
 
         a.active{
-            background-color: #262626;
+            background-color: var(--SecondBGColor);
             padding: 14px 28px;
             border-radius: 8px;
         }
@@ -38,17 +38,9 @@ nav{
         border-radius: 8px;
         background-color: var(--IDentity_color);
         text-decoration: none;
-        color: black;
+        color: var(--ColorBlack);
         padding: 16px 24px;
     }
-
-
-
-    /* .dash{
-        background-color: var(--SecondBGColor);
-        margin-right: 13px;
-        color: white;
-    } */
 
     .bars {
         display: none;
@@ -73,11 +65,6 @@ nav{
         font-weight: 500;
     }
 
-    .lm_font_size_weight2{
-        font-size: 16px;
-        font-weight: 500;
-    }
-
     nav{
         height: 85px;
 
@@ -91,7 +78,7 @@ nav{
             gap: 24px;
 
             a.active{
-                background-color: #262626;
+                background-color: var(--SecondBGColor);
                 padding: 12px 22px;
                 border-radius: 6px;
             }
@@ -118,13 +105,13 @@ nav{
             height: 46px;
             padding: 6px;
             border-radius: 6px;
-            background-color: #262626;
-            border: 1px solid #262626;
+            background-color: var(--SecondBGColor);
+            border: 1px solid var(--SecondBGColor);
 
             .icon{
                 width: 25.5px;
                 height: 17px;
-                background-color: #262626;
+                background-color: var(--SecondBGColor);
                 
             }
         }
@@ -161,18 +148,18 @@ nav{
                 padding: 12px 16px;
                 border-radius: 12px;
                 text-decoration: none;
-                color: white;
+                color: var(--MainFontColor);
                 font-size: 16px;
                 background-color: transparent;
-                transition: background-color 0.3s;
+                transition: all 0.3s;
             }
 
             li a:hover{
-                background-color: #333;
+                background-color: var(--SecondBGColor);
             }
 
             a.active{
-                background-color: #262626;
+                background-color: var(--SecondBGColor);
             }
         }
 
@@ -185,20 +172,11 @@ nav{
                 border-radius: 16px;
                 background-color: var(--IDentity_color);
                 text-decoration: none;
-                color: black;
+                color: var(--ColorBlack);
                 padding: 14px 20px;
                 display: block;
                 text-align: center;
             }
-
-           /*  .dash{
-                background-color: #262626;
-                color: white;
-            }  */
         }
     }
-
-   /*  .navMenu.show{
-        transform: translateX(0);
-    } */
 }

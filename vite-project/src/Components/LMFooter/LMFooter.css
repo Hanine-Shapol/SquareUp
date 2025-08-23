@@ -1,15 +1,13 @@
 footer{
     margin-top: 80px;
-    border-top: 1px solid #262626;
+    border-top: 1px solid var(--SecondBGColor);
     background-color: var(--MainBGColor);
     .lm_footer_Part1{
-        /* border-top: 1px solid #262626; */
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding-bottom: 50px;
         padding-top: 50px;
-        /* border-bottom: 1px solid #262626; */
         gap: 5px;
 
         .lm_navItems{
@@ -29,9 +27,8 @@ footer{
             display: flex;
             justify-content: center;
             align-items: center;
-            /* padding: 32.5px 14px 32.5px 24px; */
             padding-left: 14px;
-            border: 1px solid #262626;
+            border: 1px solid var(--SecondBGColor);
             border-radius: 12px;
             gap: 20px;
 
@@ -46,9 +43,9 @@ footer{
                 height: 64px;
                 margin-right: 14px;
                 padding: 20px;
-                background: linear-gradient(to top, #242424, #2E2E2E);
+                background: var(--ColorIcons);
                 border-radius: 8px;
-                border: 1px solid #2E2E2E;
+                border: 1px solid var(--ColorFooterIcon);
             }
 
             .lm_socialIcon{
@@ -59,7 +56,7 @@ footer{
         }
     }
     .lm_footer_Part2{
-        border-top: 1px solid #262626;
+        border-top: 1px solid var(--SecondBGColor);
         padding-top: 50px;
         padding-bottom: 50px;
         display: flex;
@@ -77,7 +74,7 @@ footer{
             align-items: center;
             gap: 10px;
             padding-bottom: 16px;
-            border-bottom: 1px solid #262626;
+            border-bottom: 1px solid var(--SecondBGColor);
 
             img{
                 width: 24px;
@@ -98,6 +95,11 @@ footer{
 
 @media screen and (max-width : 1440px ) {
 
+    .lm_font_size_weight2{
+        font-size: 16px;
+        font-weight: 500;
+    }
+
     footer{
         .lm_footer_Part1{
             padding-bottom: 40px;
@@ -116,7 +118,6 @@ footer{
             .lm_stay_Connected{
                 max-width: 337px;
                 height: 72px;
-                /* padding: 24px 10px 24px 20px; */
                 padding-left: 20px;
                 border-radius: 8px;
                 gap: 20px;
@@ -183,7 +184,7 @@ footer{
                 width: 100%;
                 height: 1px;
                 display: flex;
-                background-color: #262626;
+                background-color: var(--SecondBGColor);
             }
 
             .lm_navItems{
@@ -234,7 +235,7 @@ footer{
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    background-color: #262626;
+                    background-color: var(--SecondBGColor);
                     margin: 20px 0;
                 }
 

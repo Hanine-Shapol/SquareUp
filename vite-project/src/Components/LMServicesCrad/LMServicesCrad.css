@@ -7,8 +7,9 @@
 .lm-table,
 .lm-table * {
     color: var(--MainFontColor);
+    font-family: 'Barlow';
 }
-/* فورم عمودي بسيط */
+/* فورم  */
 .lm-form {
 display: flex;
 flex-direction: column;
@@ -28,7 +29,7 @@ opacity: 0.95;
 .lm-form input,
 .lm-form textarea {
 padding: 10px 12px;
-border: 1px solid #262626;
+border: 1px solid var(--SecondBGColor) ;
 border-radius: 8px;
 background: transparent;
 color: inherit;
@@ -44,15 +45,16 @@ resize: vertical;
 align-self: flex-start;
 padding: 10px 16px;
 border-radius: 8px;
-border: 1px solid #262626;
-background: #262626;
-color: #fff;
+border: 1px solid var(--SecondBGColor) ;
+background: var(--IDentity_color) ;
+color: var(--ColorBlack);
 cursor: pointer;
 font-size: 14px;
 }
+
 .lm-form button:hover { filter: brightness(1.05); }
 
-/* جدول بسيط */
+/* جدول  */
 .lm-table-wrap {
 width: 100%;
 overflow-x: auto;
@@ -61,12 +63,12 @@ overflow-x: auto;
 .lm-table {
 width: 100%;
 border-collapse: collapse;
-min-width: 720px; /* يعطي شكل جدول حتى مع نصوص طويلة */
+min-width: 720px; 
 }
 
 .lm-table th,
 .lm-table td {
-border: 1px solid #262626;
+border: 1px solid var(--SecondBGColor) ;
 padding: 12px;
 text-align: left;
 vertical-align: top;
@@ -74,15 +76,13 @@ font-size: 14px;
 }
 
 .lm-table th {
-background: rgba(38, 38, 38, 0.2);
+background: var(--ColorDashTh);
 font-weight: 600;
 }
 
 .lm-table img {
-    /* background-color: transparent; */
 width: 30px;
 height: 30px;
-/* object-fit: cover; */
 border-radius: 6px;
 }
 
@@ -93,14 +93,14 @@ white-space: nowrap;
 .lm-actions button {
 padding: 8px 12px;
 border-radius: 8px;
-border: 1px solid #262626;
-background: transparent;
-color: inherit;
+border: 1px solid var(--SecondBGColor) ;
+background: var(--IDentity_color);
+color: var(--ColorBlack);
 cursor: pointer;
 font-size: 13px;
 margin-right: 8px;
 }
-.lm-actions button:hover {
-background: #262626;
-color: #fff;
-}
+/* .lm-actions button:hover {
+background: var(--SecondBGColor) ;
+color: var(--MainFontColor);
+} */

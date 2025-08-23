@@ -27,7 +27,8 @@ const LMWhyChooseCrad = () => {
             }));
             setRows(withIds);
             localStorage.setItem(STORAGE_KEY, JSON.stringify(withIds));
-        } catch {
+        } 
+        catch {
             setRows([]);
         }
         }
@@ -50,7 +51,8 @@ const LMWhyChooseCrad = () => {
         if (form.id) {
         const updated = rows.map((r) => (r.id === form.id ? form : r));
         persist(updated);
-        } else {
+        } 
+        else {
         const newRow = { ...form, id: Date.now() };
         persist([...rows, newRow]);
         }
@@ -99,6 +101,7 @@ const LMWhyChooseCrad = () => {
                         reader.readAsDataURL(file);
                     }
                     }}
+                    style={{backgroundColor: "var(--IDentity_color)", color: "var(--ColorBlack)" }}
                 />
                 </label>
 
@@ -128,7 +131,7 @@ const LMWhyChooseCrad = () => {
                 <div style={{ display: "flex", gap: "10px" }}>
                 <button type="submit">{form.id ? "Update" : "Add"}</button>
                 {form.id && (
-                    <button type="button" onClick={onCancel}>
+                    <button type="button" onClick={onCancel} style={{backgroundColor: "var(--Colorred)", color: "var(--MainFontColor)" }}>
                     Cancel
                     </button>
                 )}
@@ -140,10 +143,10 @@ const LMWhyChooseCrad = () => {
                 <table className="lm-table">
                 <thead>
                     <tr>
-                    <th>Image</th>
-                    <th>Title</th>
-                    <th>Paragraph</th>
-                    <th>Actions</th>
+                        <th>Image</th>
+                        <th>Title</th>
+                        <th>Paragraph</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -156,7 +159,7 @@ const LMWhyChooseCrad = () => {
                         <button type="button" onClick={() => onEdit(r)}>
                             Edit
                         </button>
-                        <button type="button" onClick={() => onDelete(r.id)}>
+                        <button type="button" onClick={() => onDelete(r.id)} style={{backgroundColor: "var(--Colorred)", color: "var(--MainFontColor)" }}>
                             Delete
                         </button>
                         </td>

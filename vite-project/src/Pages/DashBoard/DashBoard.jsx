@@ -5,9 +5,9 @@ import './DashBoard.css'
 const DashBoard = () => {
   return (
     <div className="lm-section-crud lm_whitespacing_x">
-      <h1>Our Services</h1>
+      <h1 className="lm-dashboard-title">Our Services</h1>
       <LMServicesCrad />
-      <h1>Why Choose Section</h1>
+      <h1 className="lm-dashboard-title">Why Choose SquareUp?</h1>
       <LMWhyChooseCrad />
     </div>
   )
