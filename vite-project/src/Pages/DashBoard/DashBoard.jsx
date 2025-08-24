@@ -1,4 +1,6 @@
 import './DashBoard.css'
+import LMServicesCrad from "../../Components/LMServicesCrad/LMServicesCrad"
+import LMWhyChooseCrad from "../../Components/LMWhyChooseCrad/LMWhyChooseCrad"
 import RDProcessPageCrud from '../../components/RDProcessPageCrud/RDProcessPageCrud'
 import RDAboutPageCrud from '../../components/RDAboutPageCrud/RDAboutPageCrud'
 import MmContactUsDashboard from "../../Components/MmContactUsDashbord/MmContactUsDashboard"
@@ -129,10 +131,15 @@ const Dashboard = () => {
   }, [cards]);
 
   return (
-    <div className='lm_whitespacing_x'>
+
+    <div className="lm-section-crud lm_whitespacing_x">
         <h2>At SquareUp Crud</h2>
         <RDProcessPageCrud />
         <h2>Our Story Crud</h2>
+    <h1 className="lm-dashboard-title">Our Services</h1>
+      <LMServicesCrad />
+      <h1 className="lm-dashboard-title">Why Choose SquareUp?</h1>
+      <LMWhyChooseCrad />
         <RDAboutPageCrud/>
         <h1>DashBoard</h1>
         <MmWorkDashboard />
