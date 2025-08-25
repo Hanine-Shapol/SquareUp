@@ -8,7 +8,7 @@ const RDProcessPageCrud = () => {
     const [isEdit, setIsEdit] = useState(false)
 
     useEffect(() => {
-        const storedCards = JSON.parse(localStorage.getItem("cards")) || []
+        const storedCards = JSON.parse(localStorage.getItem("cardsProcess")) || []
         setCards(storedCards);
     }, [])
 
@@ -30,7 +30,7 @@ const RDProcessPageCrud = () => {
         }
 
         setCards(updatedCards)
-        localStorage.setItem("cards", JSON.stringify(updatedCards))
+        localStorage.setItem("cardsProcess", JSON.stringify(updatedCards))
         setForm({ id: null, number: "", title: "", description: "" })
     }
 
@@ -42,7 +42,7 @@ const RDProcessPageCrud = () => {
     const handleDelete = (id) => {
         const updatedCards = cards.filter(c => c.id !== id)
         setCards(updatedCards)
-        localStorage.setItem("cards", JSON.stringify(updatedCards))
+        localStorage.setItem("cardsProcess", JSON.stringify(updatedCards))
     }
 
     return (

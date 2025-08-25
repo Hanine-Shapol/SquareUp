@@ -1,0 +1,7 @@
+.lm-dashboard-title{
+    display: flex;
+    justify-content: center;
+    color: var(--IDentity_color);
+    margin: 50px 0px;
+    font-family: 'Barlow';
+}
