@@ -11,8 +11,6 @@
     background-size: auto , auto;
     background-color: var(--HeroBGColor);
     border: 1px solid var(--BorderColor);
-
-
     .title{
         width: 50%;
         font-family: 'Barlow';

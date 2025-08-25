@@ -87,13 +87,13 @@
 }
 
 .crud-table td button:first-of-type {
-    background: var(--SecondaryButtonBG);
+    background: var(--IDentity_color);
     border: 1px solid var(--BorderColor);
     color: var(--MainFontColor);
 }
 
 .crud-table td button:last-of-type {
-    background: var(--IDentity_color);
+    background: var(--DangerColor);
     color: var(--MainBGColor);
 }
 

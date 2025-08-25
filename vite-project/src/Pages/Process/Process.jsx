@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import RDContainer from "../../components/RDContainer/RDContainer";
 import RDShowBtn from "../../components/RDShowBtn/RDShowBtn";
 import { useEffect, useState } from "react";
+import MmHeadOfSection from "../../Components/MmHeadOfSection/MmHeadOfSection";
 
 
 const Process = () => {
@@ -14,11 +15,16 @@ const Process = () => {
     }, []);
 
     return (
-        <div>
-            
-            <RDShowBtn initialCount={4}  Cards={cards}/>
+            <div className="lm_whitespacing_x">
+                <MmHeadOfSection
+                    title="Process of Starting the Project"
+                    subtitle="At SquareUp, we value transparency, collaboration, and delivering exceptional results."
+                    bgImage="/assets/images/head-bg-6.png"
+                />
+                <RDShowBtn initialCount={4} Cards={cards} />
             <Outlet />
-        </div>
+            </div>
+            
     );
 };
 

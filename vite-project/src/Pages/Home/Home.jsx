@@ -1,14 +1,18 @@
+
 import { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import RDHero from "../../components/RDHero/RDHero";
 import LMServices from "../../Components/LMServices/LMServices";
 import MmFAQCards from "../../Components/MmFAQCards/MmFAQCards";
-import HSH_SliderCards from "../../components/HSH_SliderCards/HSH_SliderCards";
+import HSH_SliderCards from "../../Components/HSH_SliderCards/HSH_SliderCards";
 import "./Home.css";
+import MmHeadOfSection from "../../Components/MmHeadOfSection/MmHeadOfSection";
 
+// مفاتيح التخزين
 const STORAGE_KEY = "lm_cards";
 const STORAGE_KEY_WC = "lm_why_choose";
 
+// بيانات افتراضية
 const DEFAULT_CARDS = [
   {
     image: "/assets/images/draw.svg",
@@ -60,75 +64,29 @@ const defaultWhyChoose = [
   },
 ];
 
-const defaultCards = [
-  {
-    id: 1,
-    title: "SquareUp has been Instrumental in Transforming our Online Presence.",
-    description:
-      "Their team's expertise in web development and design resulted in a visually stunning and user-friendly e-commerce platform. Our online sales have skyrocketed, and we couldn't be happier.",
-    image: "/assets/images/John.jpg",
-    name: "John Smith",
-    job: "CEO of Chic Boutique",
-    url: "https://focal-x.com/",
-  },
-  {
-    id: 2,
-    title: "Working with SquareUp was a breeze.",
-    description:
-      "They understood our vision for a mobile app that streamlined our food delivery service. The app they delivered exceeded our expectations, and our customers love the seamless ordering experience. SquareUp is a trusted partner we highly recommend.",
-    image: "/assets/images/Sarah.png",
-    name: "Sarah Johnson",
-job: "Founder of HungryBites.",
-    url: "https://focal-x.com/",
-  },
-  {
-    id: 3,
-    title:
-      "SquareUp developed a comprehensive booking and reservation system for our event management company",
-    description:
-      "Their attention to detail and commitment to delivering a user-friendly platform was evident throughout the project. The system has streamlined our operations and enhanced our clients' event experiences.",
-    image: "/assets/images/Mark.png",
-    name: "Mark Thompson",
-    job: "CEO of EventMasters",
-    url: "https://focal-x.com/",
-  },
-  {
-    id: 4,
-    title: "ProTech Solutions turned to SquareUp to automate our workflow",
-    description:
-      "They delivered an exceptional custom software solution. The system has significantly increased our productivity and reduced manual errors. SquareUp's expertise and professionalism have made them a trusted technology partner.",
-    image: "/assets/images/Laura.png",
-    name: "Laura Adams",
-    job: "COO of ProTech Solutions.",
-    url: "https://focal-x.com/",
-  },
-  {
-    id: 5,
-    title:
-      "SquareUp designed and developed a captivating web portal for showcasing our real estate listings.",
-    description:
-      "The platform is visually appealing and easy to navigate, allowing potential buyers to find their dream homes effortlessly. SquareUp's expertise in the real estate industry is unmatched.",
-    image: "/assets/images/Michael.png",
-    name: "Michael Anderson",
-    job: "Founder of Dream Homes Realty.",
-    url: "https://focal-x.com/",
-  },
-  {
-    id: 6,
-    title:
-      "FitLife Tracker wanted a mobile app that tracked fitness activities and provided personalized workout plans.",
-    description:
-      "SquareUp's team developed an intuitive and feature-rich app that has helped our users stay motivated and achieve their fitness goals. We highly recommend SquareUp for any health and fitness app development needs.",
-    image: "/assets/images/Emily.png",
-    name: "Emily Turner",
-    job: "CEO of FitLife Tracker",
-    url: "https://focal-x.com/",
-  },
-];
-
 const Home = () => {
-  const [cards, setCards] = useState([]);
-  const [whyChooseCards, setWhyChooseCards] = useState([]);
+  const [cards, setCards] = useState([]); // خدمات
+  const [whyChooseCards, setWhyChooseCards] = useState([]); // ليش تختارنا
+  const [faqData, setFaqData] = useState(() => {
+    const storedFAQ = localStorage.getItem("faqData");
+    return storedFAQ
+      ? JSON.parse(storedFAQ)
+      : [
+          { question: "What services does SquareUp provide", answer: "SquareUp offers a range of services including design, engineering..." },
+          { question: "How can SquareUp help my business?", answer: "Lorem ipsum dolor sit amet..." },
+          { question: "What industries does SquareUp work with?", answer: "Lorem ipsum dolor sit amet..." },
+          { question: "How long does it take to complete a project with SquareUp?", answer: "Lorem ipsum dolor sit amet..." },
+          { question: "Do you offer ongoing support and maintenance after the project is completed?", answer: "Lorem ipsum dolor sit amet..." },
+          { question: "Can you work with existing design or development frameworks?", answer: "Lorem ipsum dolor sit amet..." },
+          { question: "How involved will I be in the project development process?", answer: "Lorem ipsum dolor sit amet..." },
+          { question: "Can you help with website or app maintenance and updates?", answer: "Lorem ipsum dolor sit amet..." }
+        ];
+  });
+
+  // حفظ FAQ في localStorage
+  useEffect(() => {
+    localStorage.setItem("faqData", JSON.stringify(faqData));
+  }, [faqData]);
 
   // LM Services
   useEffect(() => {
@@ -174,15 +132,6 @@ const Home = () => {
     }
   }, []);
 
-  const [testimonialCards, setTestimonialCards] = useState(() => {
-    const storedCards = localStorage.getItem("cards");
-    return storedCards ? JSON.parse(storedCards) : defaultCards;
-  });
-
-  useEffect(() => {
-    localStorage.setItem("cards", JSON.stringify(testimonialCards));
-  }, [testimonialCards]);
-
   return (
     <div className="home-container">
       {/* Hero Section */}
@@ -198,7 +147,15 @@ const Home = () => {
         btn2={{ Link: "/ContactUs", text: "Contact Us" }}
       />
       <Outlet />
-{/* Services Section */}
+
+      {/* Services Section */}
+      <div className="lm_whitespacing_x">
+        <MmHeadOfSection
+          title="Our Services"
+          subtitle="Transform your brand with our innovative digital solutions that captivate and engage your audience."
+          bgImage="/assets/images/head-bg-2.png"
+        />
+      </div>
       <div className="lm_whitespacing_x lm-cards-container three-columns">
         {cards.map((card) => (
           <LMServices
@@ -214,6 +171,14 @@ const Home = () => {
       </div>
 
       {/* Why Choose Section */}
+      <div className="lm_whitespacing_x">
+        <MmHeadOfSection
+          title="Why Choose SquareUp?"
+          subtitle="Experience excellence in digital craftsmanship with our team of skilled professionals dedicated to delivering exceptional results."
+          bgImage="/assets/images/head-bg-2.png"
+          className="lm_whitespacing_x"
+        />
+      </div>
       <div className="lm_whitespacing_x lm-cards-container two-columns">
         {whyChooseCards.map((item) => (
           <LMServices
@@ -229,8 +194,22 @@ const Home = () => {
 
       {/* Testimonials Section */}
       <div className="lm_whitespacing_x">
-        <HSH_SliderCards cards={testimonialCards} />
-        <MmFAQCards cards={testimonialCards} />
+        <MmHeadOfSection
+title="What our Clients say About us"
+          subtitle="At SquareUp, we take pride in delivering exceptional digital products and services that drive success for our clients. Here's what some of our satisfied clients have to say about their experience working with us"
+          bgImage="/assets/images/head-bg-3.png"
+        />
+              <HSH_SliderCards />
+      </div>
+
+      {/* FAQ Section */}
+      <div className="lm_whitespacing_x">
+        <MmHeadOfSection
+          title="Frequently Asked Questions"
+          subtitle="Still you have any questions? Contact our Team via hello@squareup.com"
+          bgImage="/assets/images/head-bg-4.png"
+        />
+        <MmFAQCards faqData={faqData} />
       </div>
     </div>
   );

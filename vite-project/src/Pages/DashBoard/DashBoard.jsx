@@ -1,16 +1,15 @@
+
 import './DashBoard.css'
+import React, { useState, useEffect } from "react";
+
 import LMServicesCrad from "../../Components/LMServicesCrad/LMServicesCrad"
 import LMWhyChooseCrad from "../../Components/LMWhyChooseCrad/LMWhyChooseCrad"
 import RDProcessPageCrud from '../../components/RDProcessPageCrud/RDProcessPageCrud'
 import RDAboutPageCrud from '../../components/RDAboutPageCrud/RDAboutPageCrud'
 import MmContactUsDashboard from "../../Components/MmContactUsDashbord/MmContactUsDashboard"
 import MmWorkDashboard from "../../Components/MmWorkDashboard/MmWorkDashboard"
-
-
-import React, { useState, useEffect } from "react";
-import HSH_FAQCRUD from "../../Components/HSH_FAQCRUD/HSH_FAQCRUD";
 import HSH_CardCRUD from "../../Components/HSH_CardCRUD/HSH_CardCRUD";
-import "./Dashboard.css";
+import HSH_FAQCRUD from "../../Components/HSH_FAQCRUD/HSH_FAQCRUD";
 
 const defaultFAQ = [
     {
@@ -46,6 +45,7 @@ const defaultFAQ = [
         answer: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum soluta sunt repellat, adipisci aliquid placeat voluptatum accusantium minima magnam, quas dolore vero numquam eum consectetur. Magnam possimus blanditiis recusandae earum!"
     }
 ];
+
 const defaultCards = [
     {
         id: 1,
@@ -111,43 +111,45 @@ const defaultCards = [
     },
 ];
 
-const Dashboard = () => {
-  const [faqData, setFaqData] = useState(() => {
-    const storedFAQ = localStorage.getItem("faqData");
-    return storedFAQ ? JSON.parse(storedFAQ) : defaultFAQ;
-  });
+const DashBoard = () => {
+    const [faqData, setFaqData] = useState(() => {
+        const storedFAQ = localStorage.getItem("faqData");
+        return storedFAQ ? JSON.parse(storedFAQ) : defaultFAQ;
+    });
 
-  const [cards, setCards] = useState(() => {
-    const storedCards = localStorage.getItem("cardsData");
-    return storedCards ? JSON.parse(storedCards) : defaultCards;
-  });
+    const [cards, setCards] = useState(() => {
+        const storedCards = localStorage.getItem("cards");
+        return storedCards ? JSON.parse(storedCards) : defaultCards;
+    });
 
-  useEffect(() => {
-    localStorage.setItem("faqData", JSON.stringify(faqData));
-  }, [faqData]);
+    // حفظ FAQ في localStorage
+    useEffect(() => {
+        localStorage.setItem("faqData", JSON.stringify(faqData));
+    }, [faqData]);
 
-  useEffect(() => {
-    localStorage.setItem("cardsData", JSON.stringify(cards));
-  }, [cards]);
+    // حفظ الكروت في localStorage
+    useEffect(() => {
+        localStorage.setItem("cards", JSON.stringify(cards));
+    }, [cards]);
 
-  return (
+    return (
+        <div className="lm-section-crud lm_whitespacing_x">
+            
+            <h2 className="lm-dashboard-title">Our Services</h2>
+            <LMServicesCrad />
+            <h2>At SquareUp Crud</h2>
+            <RDProcessPageCrud />
+            <h2 className="lm-dashboard-title">Why Choose SquareUp?</h2>
+            <LMWhyChooseCrad />
+            <RDAboutPageCrud />
+            <MmWorkDashboard />
+            <MmContactUsDashboard />
+            {/* CRUD Sliders */}
+            <HSH_CardCRUD cards={cards} setCards={setCards} />
+            {/* CRUD FAQ */}
+            <HSH_FAQCRUD faqData={faqData} setFaqData={setFaqData} />
+        </div>
+    );
+};
 
-    <div className="lm-section-crud lm_whitespacing_x">
-        <h2>At SquareUp Crud</h2>
-        <RDProcessPageCrud />
-        <h2>Our Story Crud</h2>
-    <h1 className="lm-dashboard-title">Our Services</h1>
-      <LMServicesCrad />
-      <h1 className="lm-dashboard-title">Why Choose SquareUp?</h1>
-      <LMWhyChooseCrad />
-        <RDAboutPageCrud/>
-        <h1>DashBoard</h1>
-        <MmWorkDashboard />
-        <MmContactUsDashboard />
-    <HSH_CardCRUD  cards={cards} setCards={setCards} />
-      <HSH_FAQCRUD  faqData={faqData} setFaqData={setFaqData} />
-    </div>
-)
 export default DashBoard;
-
-
