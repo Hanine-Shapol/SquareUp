@@ -3,7 +3,8 @@ import "./SaTodaySquareUp.css";
 
 const SaTodaySquareUp = ({ icon, title, subtitle, subtitleCta, highlightCta, linkTo ,buttonText }) => {
   return (
-    <div className="SaTodaySquareUp">
+    <div className="SaTodaySquareUp lm_whitespacing_x">
+      
     <div className="top-section">
         <div className="icon-box">
             <img src={icon} alt="SquareUp icon" />
@@ -22,6 +23,7 @@ const SaTodaySquareUp = ({ icon, title, subtitle, subtitleCta, highlightCta, lin
         <Link to ={linkTo} className="cta-button">{buttonText}</Link>
       </div>
     </div>
+    
   )
 }
 

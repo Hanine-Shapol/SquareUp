@@ -1,5 +1,5 @@
 import SaWorkone from "../../components/SaWorkone/SaWorkone" 
-import SaTodaySquareUp from '../../components/SaTodaySquareUp/SaTodaySquareUp';
+import SaTodaySquareUp from '../../components/SaTodaySquareUp/SaTodaySquareUp'
 
 
 const ContactUS = () => {

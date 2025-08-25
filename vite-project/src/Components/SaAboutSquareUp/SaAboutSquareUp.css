@@ -1,0 +1,421 @@
+
+.SaAboutSquareUp {
+  width: 1596px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-right: 150px;
+  background-color: var(--SecondBGColor);
+}
+
+/* النصوص */
+.SaAboutSquareUp .about-text {
+  width: 100%;
+  max-width: 598px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.SaAboutSquareUp .about-title {
+  font-family: "Barlow", sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--MainFontColor);
+  margin: 0;
+  line-height: 100%;
+}
+
+.SaAboutSquareUp .about-subtitle {
+  font-family: "Barlow", sans-serif;
+  font-size: 20px;
+  line-height: 150%;
+  color: var(--SecondFontColor);
+  font-weight: 400;
+  letter-spacing: -0.6%;
+  
+}
+
+.SaAboutSquareUp .about-image {
+  max-width: 598px;
+  height: 571px;
+  position: relative;
+  overflow: hidden;
+  background: url('/assets/images/head-bg-5-bw.png') center / cover no-repeat;
+  border-radius: 16px;
+  z-index: 0;
+}
+
+.SaAboutSquareUp .about-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background:
+  url('/assets/images/asfalt-light.png'),
+    url('/assets/images/Square-effect.png'),
+   radial-gradient(circle at 25% 25%, rgba(64, 64, 64, 0.3) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, rgba(64, 64, 64, 0.3) 1px, transparent 1px),
+    linear-gradient(45deg, rgba(32, 32, 32, 0.8) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(32, 32, 32, 0.8) 25%, transparent 25%), #1a1a1a;
+  background-size: 30px 30px, 40px 40px, 30px 30px, 30px 30px, 100% 100%;
+  background-position: 0 0, 10px 10px, 0 0, 20px 20px, 0 0;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+
+.SaAboutSquareUp .about-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  /* background: rgba(171, 255, 36, 0.08); */
+  background: rgba(171, 255, 36, 0.146);
+  mix-blend-mode: overlay;
+  z-index: 2;
+}
+
+.SaAboutSquareUp .lines-container {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+
+
+.SaAboutSquareUp .line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(172, 255, 36, 0.3) 20%,
+    rgba(172, 255, 36, 0.8) 50%,
+    rgba(172, 255, 36, 0.3) 80%,
+    transparent 100%
+  );
+  transform-origin: center;
+  z-index: 3;
+}
+
+.SaAboutSquareUp .line-0 {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.SaAboutSquareUp .line-90 {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.SaAboutSquareUp .line-180 {
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.SaAboutSquareUp .line-270 {
+  transform: translate(-50%, -50%) rotate(270deg);
+}
+
+/* أيقونة الوسط مع z-index عالي */
+.SaAboutSquareUp .icon-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('/assets/images/layer-bluer.svg') , no-repeat center,
+    radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+  background-size: contain;
+  backdrop-filter: blur(217px);
+  opacity: 1;
+
+}
+
+.SaAboutSquareUp .about-icon {
+  width: 150px;
+  height: 150px;
+  z-index: 6;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2)) drop-shadow(0 0 12px rgba(172, 255, 36, 0.15))
+    drop-shadow(0 0 24px rgba(172, 255, 36, 0.08));
+  
+}
+
+
+@media (max-width: 1440px) {
+  .SaAboutSquareUp {
+    width: 1280px;
+    gap: 80px;
+    padding: 80px 100px;
+    border: 1px solid var(--SecondBGColor);
+  }
+
+  .SaAboutSquareUp .about-text {
+    width: 490px;
+    gap: 16px;
+  }
+
+  .SaAboutSquareUp .about-title {
+    font-size: 38px;
+  }
+
+  .SaAboutSquareUp .about-subtitle {
+    font-size: 16px;
+  }
+
+  .SaAboutSquareUp .about-image {
+    width: 490px;
+    height: 483px;
+  }
+
+  .SaAboutSquareUp .about-icon {
+    width: 100.47px;
+    height: 100px;
+  }
+}
+
+
+@media (max-width: 992px) {
+  .SaAboutSquareUp {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 40px 16px;
+    width: 390px;
+    
+  }
+
+  .SaAboutSquareUp .about-text {
+    width: 100%;
+    max-width: 358px;
+    margin: 0 auto;
+    gap: 16px;
+  }
+
+  .SaAboutSquareUp .about-title {
+    font-size: 28px;
+  }
+
+  .SaAboutSquareUp .about-subtitle {
+    font-size: 14px;
+  }
+
+  .SaAboutSquareUp .about-image {
+    width: 100%;
+    max-width: 358px;
+    height: 337px;
+    margin: 0 auto;
+  }
+
+  .SaAboutSquareUp .about-icon {
+    width: 80.38px;
+    height: 80px;
+    border-radius: 12px;
+
+  }
+
+  .SaAboutSquareUp .line {
+    height: 3px;
+  }
+}
+
+/*
+@media (max-width: 768px) {
+  .SaAboutSquareUp {
+    padding: 40px 20px;
+    gap: 40px;
+  }
+
+  .SaAboutSquareUp .about-title {
+    font-size: 28px;
+  }
+
+  .SaAboutSquareUp .about-image {
+    height: 300px;
+  }
+
+  .SaAboutSquareUp .about-icon {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+
+
+
+
+/* Main container styling based on Figma specifications 
+
+.SaAboutSquareUp {
+  max-width: 1596px; 
+  width: 100%;       
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  background-color: black ;
+  --icon-size: 150px;
+  --line1-thickness: 3px;       
+  --line1-color:none;
+}
+/* Text section styling - left side 
+.SaAboutSquareUp .about-text {
+  min-width: 598px;
+  gap: 20px;
+}
+.SaAboutSquareUp .about-title {
+  font-family: Barlow , SemiBold;
+  font-size: 48px; 
+  font-weight: bold;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  font-weight: 600px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.SaAboutSquareUp .about-subtitle {
+  font-family: Barlow , Regular;
+  min-width: 598px;
+  font-size: 20px;
+  line-height: 150%;
+  color: #E6E6E6;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.6%;
+}
+
+.SaAboutSquareUp .icon-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* يحركها للوسط 
+  border-radius: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+.SaAboutSquareUp .about-icon {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  z-index: 15;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.SaAboutSquareUp .about-image {
+  max-width: 589px;
+  height: 571px;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  /* الصورة الأساسية 
+  background: url('./assets/images/head-bg-5.png') center/cover no-repeat ;
+  filter: grayscale(0.5);
+  z-index: 0;
+  
+}
+
+/* الطبقة الأولى: textures 
+.SaAboutSquareUp .about-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: 
+    url('/assets/images/asfalt-light.png'),
+    url('/assets/images/Square-effect.png');
+  background-repeat: repeat, repeat;
+  background-position: top left, top left;
+  background-size: 50px 50px, 50px 50px;
+  filter: saturate(-2) brightness(0.06);
+
+  z-index: -1; 
+}
+
+/* الطبقة الثانية: overlay أخضر 
+.SaAboutSquareUp .about-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: rgb(172, 255, 36);
+   /* الأخضر من فيغما 
+  mix-blend-mode:color; /* يفرض اللون 
+  opacity: 1;          /* عدل حتى يطابق فيغما 
+  z-index: -2;
+}
+
+.SaAboutSquareUp .icon-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;  /* فوق كل شيء 
+}
+
+  .SaAboutSquareUp .line-horizontal {
+  position: absolute;
+  top: 50%;                     /* تمركز عموديًا بمركز الأيقونة 
+  left: 0;                      /* يبدأ من أقصى اليسار 
+  transform: translateY(-50%);
+}
+.SaAboutSquareUp .line-horizontal-2 {
+  position: absolute;
+  
+}
+
+.SaAboutSquareUp .line-vertical-1 {
+}
+
+
+
+.SaAboutSquareUp .line-vertical-2 {
+  position: absolute;
+  top: calc(50%); /* 50% من الصورة + نصف ارتفاع الأيقونة (150px / 2) 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;  
+  background-color: none;  
+  z-index: 4;
+}
+/*.SaAboutSquareUp .line-horizontal,
+.SaAboutSquareUp .line-vertical {
+  position: absolute;
+  background: #ACFF24;
+  opacity: 0.8;
+}
+
+.SaAboutSquareUp .line-horizontal {
+  width: 589px;
+  height: 2px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.SaAboutSquareUp .line-vertical {
+ 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+} 
+
+
+
+
+/* تأثيرات الحركة 
+.SaAboutSquareUp .about-icon {
+  animation: float 3s ease-in-out infinite;
+}
+
+*/
+

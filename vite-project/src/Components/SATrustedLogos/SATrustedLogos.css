@@ -1,15 +1,15 @@
 .trustedlogo {
-  padding: 0 161px 0 163px;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 20px;
+  justify-content: space-between;
+  /*gap: 20px;*/
   border-width: 0px 1px 1px 1px;
   border-style: solid;
-  border-color: #262626;
+  border-color:var(--SecondBGColor);
   background-color: var(--MainBGColor);
+  width: 1596px;
 
 }
 
@@ -17,7 +17,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #262626;
+  border: 1px solid var(--SecondBGColor);
   border-radius: 100px;
   padding: 20px 34px;
   width: 286px;
@@ -25,12 +25,10 @@
 
 .trusted-header-text {
   color: #FDFFFA;
+  min-width: 218px ;
+  font-family: Barlow, sans-serif;
   font-weight: 500;
   font-size: 18px;
-  font-weight: 500px;
-  opacity: 0.9;
-  margin: 0;
-  
 }
 
 .TrustedLogos-content {
@@ -48,64 +46,33 @@
   background: transparent !important;
   filter: brightness(0) invert(1);
   opacity: 0.8;
-  
-  flex-hrink: 0;
+
 }
 
 .TrustedLogos-content img:hover {
   opacity: 1;
   
 }
-
-/*.trustedlogo,
-.TrustedLogos-content,
-.TrustedLogos-content ,
-.trusted-icon1,
-.trusted-icon2,
-.trusted-icon3,
-.trusted-icon4,
-.trusted-icon5,
-.trusted-icon6 {
-  background-color: transparent !important;
-}*/
-
-
 @media screen and (max-width: 1440px) {
   .trustedlogo {
     padding: 0 80px;
   }
-}
-
-@media screen and (max-width: 992px) {
-  .trustedlogo {
-    padding: 0 16px;
-    min-height: 100px;
-    gap: 15px;
-  }
-
   .TrustedLogos-content {
-    max-width: 100%;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .TrustedLogos-content img {
-    height: 28px;
-  }
-
-  .trusted-header-text {
-    font-size: 12px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   }
 }
  /* Adding mobile media query for grid layout matching Figma design */
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 992px) {
   .trustedlogo {
+    width: 100%;
     display: flex;
     justify-items: center;
     align-items: center;
-    gap: 24px;
-    border: 1px solid #262626;
+    
+    border: 1px solid var(--SecondBGColor);
     border-width: 0px, 1px, 1px, 1px;
     padding: 16px;
     margin: 4px;
@@ -119,15 +86,17 @@
   }
 
   .trusted-header-text {
-    font-size: 12px;
+    min-width: 169px;
+    font-size: 14px;
     line-height: 1.2;
   }
 
   .TrustedLogos-content {
+    width: 100%;
+    
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3, 1fr);
-    gap: 32px 24px;
     max-width:max-content;
     justify-items: center;
     align-items: center;
@@ -146,10 +115,11 @@
 .trusted-icon5,
 .trusted-icon6 {
 
-  border: 1px solid #262626;
+  border: 1px solid var(--SecondBGColor);
   padding: 16px 20px;                       
-  border-radius: 4px;                     
-  min-width: 143px;                           
+  width: 100%;               
+  min-width: 143px;  
+  max-width: 140px;                         
   min-height: 60px;                           
   display: flex;                               
   align-items: center;                       

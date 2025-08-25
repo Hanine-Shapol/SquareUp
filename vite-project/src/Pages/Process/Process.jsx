@@ -12,12 +12,12 @@ const Process = () => {
         />
         <SASquerup
         title="At SquareUp"
-        subtitle= "We have had the privilege of working with a diverse range of clients and delivering exceptional digital products that drive success."
-        subtitleContainer="Here are ten examples of our notable works:"
+        subtitle= "We follow a structured and collaborative process to ensure the successful delivery of exceptional digital products. Our process combines industry best practices, creative thinking, and a client-centric approach."
+        subtitleContainer="Here's an overview of our typical process:"
         />
         <ThankyouSec
         bgImage="/assets/images/head-bg-3.png"
-        image="/assets/images/Logo.svg"
+        image="/assets/images/Logo-colorfull.svg"
         title="Thank you for your Interest in SquareUp."
         subtitle= "We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us."
         buttonText="Start Project"

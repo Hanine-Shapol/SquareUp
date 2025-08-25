@@ -10,8 +10,8 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 50px;
-  border: 1px solid #262626;
-  Background-color: var(--MainBGColor)
+  border: 1px solid var(--SecondBGColor );
+  Background-color: var(--MainBGColor);
 }
 
 /* --- Top Section --- */
@@ -22,8 +22,8 @@
   width: 100%;
   max-width: 1436px;
   flex-wrap: nowrap;
- 
 }
+
 .SaTodaySquareUp .icon-box {
   width: 150.7px;
   height: 150px;
@@ -31,21 +31,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #9EFF00;
+  background-color: var(--IDentity_color);
   box-shadow: 0px 0px 23px 16px #FFFFFF80 inset;
 }
 .SaTodaySquareUp .icon-box img {
   width: 60%;
   height: 60%;
   object-fit: contain;
-  background-color: #9EFF00;
+  background-color: var(--IDentity_color);
 }
 
 .SaTodaySquareUp .text-box{
    display: flex;
    flex-direction: column;
    width: 1245px;
-   height: 110px;
    white-space: normal;
    word-break: break-word;
    gap: 20px;
@@ -53,23 +52,23 @@
 }
 
 .SaTodaySquareUp .text-box .title {
+  font-family: Barlow;
   font-size: 30px;
   font-weight: 500px;
-  color: #98989A;
+  color: var(--SecondPColor);
   line-height: 100%;
 }
 
 .SaTodaySquareUp .text-box .subtitle {
   font-family: Inter;
   font-size: 18px;
-  
-  color: #98989A;
+  color: var(--SecondPColor);
 }
 
 /* --- CTA Bar --- */
 .SaTodaySquareUp .cta-bar {
     width: 100%;
-    background: #24242433;
+    background:var(--SecondaryButtonBG);
     border-radius: 12px;
     padding: 30px 22.5px;
     display: flex;
@@ -77,15 +76,15 @@
     justify-content: space-between;
     gap: 20px;
     flex-wrap: nowrap;
-    border: 1px solid #262626;
-
+    border: 1px solid var(--SecondBGColor);
 }
 
 .SaTodaySquareUp .cta-bar .small-text {
+  font-size: Barlow;
   width: 192px;
   height: 24px;
   font-size: 20px;
-  color: #98989A;
+  color: var(--SecondPColor);
   background: none;
 }
 .SaTodaySquareUp .cta-bar .countainer-highlight {
@@ -93,7 +92,7 @@
     justify-content: center;
     align-items: center;
     width: 934px;
-    background: #262626;
+    background: var(--SecondBGColor);
     padding: 14px 20px;
     gap: 10px;
     border-radius: 8px;
@@ -101,24 +100,24 @@
 
 }
 .SaTodaySquareUp .cta-bar .highlight-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 894px;
-  color: #FFFFFF;
+  font-family: Barlow;
+  color:var(--MainFontColor);
+  max-width: 894px;
   font-size: 20px; 
   font-weight: 400px;
   background: none;
+  
 }
 
 .SaTodaySquareUp .cta-button {
   display: inline-block;
   width: 170px;
   padding: 18px 34px;
-  color:#1A1A1A;
-  background-color: #9EFF00;
+  color:var(--MainBGColor);
+  background-color:var(--IDentity_color);
   border-radius: 8px;
   text-decoration: none;
+  font-family: Barlow;
   font-size: 18px;
   transition: background-color 0.3s ease;
   
@@ -153,19 +152,15 @@
     height: auto;
     gap: 14px;
   }
-
   .SaTodaySquareUp .text-box .title {
     font-size: 24px;
   }
-
   .SaTodaySquareUp .text-box .subtitle {
     font-size: 16px;
     max-width: 1029px;
     white-space: normal;
     word-break: break-word;
-
   }
-
   .SaTodaySquareUp .cta-bar {
     width: 100%;
     max-width: 1160px;
@@ -173,13 +168,12 @@
     gap: 16px;
     flex-wrap: nowrap;
   }
-/* Add responsive sizing for small text */
   .SaTodaySquareUp .cta-bar .small-text {
     width: auto;
     min-width: 150px;
     flex-shrink: 0;
+    font-size: 18px;
   }
-
   .SaTodaySquareUp .cta-bar .countainer-highlight {
     width: 100%;
     flex-wrap: nowrap;
@@ -194,7 +188,6 @@
     flex-shrink: 0;
     min-width: 170px;
 }
-
 @media screen and (max-width: 992px) {
   .SaTodaySquareUp {
     max-width: 358px;

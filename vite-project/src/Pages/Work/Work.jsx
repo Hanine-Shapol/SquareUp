@@ -17,7 +17,7 @@ const Work = () => {
 
         <ThankyouSec
         bgImage="/assets/images/head-bg-3.png"
-        image="/assets/images/Logo.svg"
+        image="/assets/images/Logo-colorfull.svg"
         title="Let us Bring your Ideas to Life in the Digital World."
         subtitle= "No matter which services you choose, we are committed to delivering exceptional results that exceed your expectations. Our multidisciplinary team works closely together to ensure seamless collaboration and a unified vision for your digital product."
         buttonText="Start Project"

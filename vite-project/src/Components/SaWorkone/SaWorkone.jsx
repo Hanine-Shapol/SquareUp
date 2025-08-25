@@ -3,8 +3,8 @@ import './SaWorkone.css';
 
 const SaWorkone = ({ title, subtitle, bgImage }) => { 
     return (
-        <div className='SaWorkone'
-         style={{ "--bg-image": `url(${bgImage})` }} 
+    <div className="lm_whitespacing_x">
+        <div className='SaWorkone'style={{ "--bg-image": `url(${bgImage})` }} 
         >
             <div className='headWorkone'>
                 <div className="containt">
@@ -13,6 +13,7 @@ const SaWorkone = ({ title, subtitle, bgImage }) => {
                 </div>
             </div>
         </div>
+    </div>
     )
 }
 
