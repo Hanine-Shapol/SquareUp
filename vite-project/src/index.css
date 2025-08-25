@@ -12,19 +12,34 @@
     --ShadowColor: #00000088;
     --HeroBGColor: #1E1E1E;
     --SectionBGColor: #ACFF2433;
+    --ColorBlack: #000000;
+    --ColorIcons: #242424;
+    --ColorFooterIcon: #2E2E2E;
+    --ColorDashTh: #26262633;
+    --Colorred: #e20707 ;
     --myprimary-whitespacing: 162px;
+    /*---------- Color From Moamen ------------*/
+    --PlaceholderColor: #656567;
+    --LabelLightColor: #FDFFFA;
+    --TableHeaderBG: #181818;
+    --ColorBlack: #000000;
+    --DangerColor: #ff1d1d;
+    --HeadGradientStart: rgba(172, 255, 36, 0);
+    --HeadGradientEnd: rgba(172, 255, 36, 1);
 }
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    @font-face {
-    font-family: 'Inter';
-    src: url('/assets/fonts/Inter-Thin.ttf') format('truetype');
-    font-weight: 100;
+@font-face {
+
+font-family: 'Inter';
+src: url('/assets/fonts/Inter-Thin.ttf') format('truetype');
+font-weight: 100;
+
 }
 
 @font-face {
@@ -130,22 +145,22 @@
     font-weight: 900;
 }
 
-    .lm_whitespacing_x {
-        padding-left: var(--myprimary-whitespacing);
-        padding-right: var(--myprimary-whitespacing);
+.lm_whitespacing_x {
+    padding-left: var(--myprimary-whitespacing);
+    padding-right: var(--myprimary-whitespacing);
+}
+
+
+@media screen and (max-width: 1440px) {
+
+    :root {
+        --myprimary-whitespacing: 80px;
     }
+}
 
+@media screen and (max-width:992px) {
 
-    @media screen and (max-width: 1440px) {
-
-        :root {
-            --myprimary-whitespacing: 80px;
-        }
+    :root {
+        --myprimary-whitespacing: 16px;
     }
-
-    @media screen and (max-width:992px) {
-
-        :root {
-            --myprimary-whitespacing: 16px;
-        }
-    }
+}
