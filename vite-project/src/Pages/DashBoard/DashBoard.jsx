@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 import './DashBoard.css'
 import RDProcessPageCrud from '../../components/RDProcessPageCrud/RDProcessPageCrud'
 import RDAboutPageCrud from '../../components/RDAboutPageCrud/RDAboutPageCrud'
+=======
+import MmContactUsDashboard from "../../Components/MmContactUsDashbord/MmContactUsDashboard"
+import MmWorkDashboard from "../../Components/MmWorkDashboard/MmWorkDashboard"
+>>>>>>> 0ae21ef71d5fce4d0d4af02fd1c2cf9fc13a9c6f
 
 import React, { useState, useEffect } from "react";
 import HSH_FAQCRUD from "../../Components/HSH_FAQCRUD/HSH_FAQCRUD";
@@ -127,6 +132,7 @@ const Dashboard = () => {
 
   return (
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div className='lm_whitespacing_x'>
         <h2>At SquareUp Crud</h2>
         <RDProcessPageCrud />
@@ -140,6 +146,13 @@ export default DashBoard
 
 
 =======
+=======
+
+    <div>
+      <h1>DashBoard</h1>
+      <MmWorkDashboard />
+      <MmContactUsDashboard />
+>>>>>>> 0ae21ef71d5fce4d0d4af02fd1c2cf9fc13a9c6f
     <div className="dashboard-container lm_whitespacing_x">
       <HSH_CardCRUD  cards={cards} setCards={setCards} />
       <HSH_FAQCRUD  faqData={faqData} setFaqData={setFaqData} />
