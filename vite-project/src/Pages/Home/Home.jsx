@@ -6,6 +6,9 @@ import MmFAQCards from "../../Components/MmFAQCards/MmFAQCards";
 import HSH_SliderCards from "../../components/HSH_SliderCards/HSH_SliderCards";
 import "./Home.css";
 
+import SATrustedLogos from "../../components/SATrustedLogos/SATrustedLogos";
+import ThankyouSec from "../../components/ThankyouSec/ThankyouSec";
+
 const STORAGE_KEY = "lm_cards";
 const STORAGE_KEY_WC = "lm_why_choose";
 
@@ -76,9 +79,11 @@ const defaultCards = [
     title: "Working with SquareUp was a breeze.",
     description:
       "They understood our vision for a mobile app that streamlined our food delivery service. The app they delivered exceeded our expectations, and our customers love the seamless ordering experience. SquareUp is a trusted partner we highly recommend.",
-    image: "/assets/images/Sarah.png",
+
+
+image: "/assets/images/Sarah.png",
     name: "Sarah Johnson",
-job: "Founder of HungryBites.",
+    job: "Founder of HungryBites.",
     url: "https://focal-x.com/",
   },
   {
@@ -184,55 +189,79 @@ const Home = () => {
   }, [testimonialCards]);
 
   return (
-    <div className="home-container">
-      {/* Hero Section */}
-      <RDHero
-        title={"A Digital Product Studio that will Work"}
-        description={
-          <>
-            For <span> Startups </span> , <span> Enterprise leaders </span> and{" "}
-            <span> Social Good</span>
-          </>
-        }
-        btn1={{ Link: "/Work", text: "Our Works" }}
-        btn2={{ Link: "/ContactUs", text: "Contact Us" }}
+    <>
+      {/* قسم RD + Services + WhyChoose + Testimonials */}
+      <div className="home-container">
+        {/* Hero Section */}
+
+<RDHero
+          title={"A Digital Product Studio that will Work"}
+          description={
+            <>
+              For <span> Startups </span> , <span> Enterprise leaders </span> and{" "}
+              <span> Social Good</span>
+            </>
+          }
+          btn1={{ Link: "/Work", text: "Our Works" }}
+          btn2={{ Link: "/ContactUs", text: "Contact Us" }}
+        />
+        <Outlet />
+
+        {/* Services Section */}
+        <div className="lm_whitespacing_x lm-cards-container three-columns">
+          {cards.map((card) => (
+            <LMServices
+              key={card.id}
+              image={card.image}
+              title={card.title}
+              paragraph={card.paragraph}
+              btn={card.btn}
+              showButton={true}
+              horizontal={false}
+            />
+          ))}
+        </div>
+
+        {/* Why Choose Section */}
+        <div className="lm_whitespacing_x lm-cards-container two-columns">
+          {whyChooseCards.map((item) => (
+            <LMServices
+              key={item.id}
+              image={item.image}
+              title={item.title}
+              paragraph={item.paragraph}
+              showButton={false}
+              horizontal={true}
+            />
+          ))}
+        </div>
+
+        {/* Testimonials Section */}
+        <div className="lm_whitespacing_x">
+          <HSH_SliderCards cards={testimonialCards} />
+          <MmFAQCards cards={testimonialCards} />
+        </div>
+      </div>
+
+      {/* قسم Trusted Logos + Thankyou */}
+      <SATrustedLogos
+        subTitle="Trusted By 250+ Companies"
+        icon1Trusted="/assets/images/company-1.svg"
+        icon2Trusted="/assets/images/company-2.svg"
+        icon3Trusted="/assets/images/company-3.svg"
+        icon4Trusted="/assets/images/company-4.svg"
+        icon5Trusted="/assets/images/company-5.svg"
+        icon6Trusted="/assets/images/company-6.svg"
       />
-      <Outlet />
-{/* Services Section */}
-      <div className="lm_whitespacing_x lm-cards-container three-columns">
-        {cards.map((card) => (
-          <LMServices
-            key={card.id}
-            image={card.image}
-            title={card.title}
-            paragraph={card.paragraph}
-            btn={card.btn}
-            showButton={true}
-            horizontal={false}
-          />
-        ))}
-      </div>
-
-      {/* Why Choose Section */}
-      <div className="lm_whitespacing_x lm-cards-container two-columns">
-        {whyChooseCards.map((item) => (
-          <LMServices
-            key={item.id}
-            image={item.image}
-            title={item.title}
-            paragraph={item.paragraph}
-            showButton={false}
-            horizontal={true}
-          />
-        ))}
-      </div>
-
-      {/* Testimonials Section */}
-      <div className="lm_whitespacing_x">
-        <HSH_SliderCards cards={testimonialCards} />
-        <MmFAQCards cards={testimonialCards} />
-      </div>
-    </div>
+      <ThankyouSec
+        bgImage="/assets/images/head-bg-3.png"
+        image="/assets/images/Logo-colorfull.svg"
+        title="Thank you for your Interest in SquareUp."
+        subtitle="We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us."
+        buttonText="Start Project"
+        linkTo="/contact"
+      />
+    </>
   );
 };
 
