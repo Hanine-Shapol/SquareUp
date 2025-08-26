@@ -23,9 +23,9 @@
     .RD_RedBtn{
         padding: 5px 12px;
         margin: 5px;
-        background-color: red;
+        background-color: var(--Colorred);
         border-radius: 5px;
-        color: var(--HeroBGColor);
+        color: var(--MainFontColor);
         border: none;
 
 
@@ -34,6 +34,7 @@
     th ,td{
         border: 1px solid var(--SecondPColor);
         padding: 5px;
+        color: var(--MainFontColor);
 
     }
     

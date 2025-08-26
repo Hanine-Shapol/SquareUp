@@ -8,9 +8,11 @@ import RDProcessPageCrud from '../../components/RDProcessPageCrud/RDProcessPageC
 import RDAboutPageCrud from '../../components/RDAboutPageCrud/RDAboutPageCrud'
 import MmContactUsDashboard from "../../Components/MmContactUsDashbord/MmContactUsDashboard"
 import MmWorkDashboard from "../../Components/MmWorkDashboard/MmWorkDashboard"
+
 import HSH_CardCRUD from "../../Components/HSH_CardCRUD/HSH_CardCRUD";
 import HSH_FAQCRUD from "../../Components/HSH_FAQCRUD/HSH_FAQCRUD";
 
+// ================= Default Data =================
 const defaultFAQ = [
     {
         question: "What services does SquareUp provide",
@@ -52,7 +54,8 @@ const defaultCards = [
         title: "SquareUp has been Instrumental in Transforming our Online Presence.",
         description:
             "Their team's expertise in web development and design resulted in a visually stunning and user-friendly e-commerce platform. Our online sales have skyrocketed, and we couldn't be happier.",
-        image: "/images/John.jpg",
+
+image: "/images/John.jpg",
         name: "John Smith",
         job: "CEO of Chic Boutique",
         url: "https://focal-x.com/",
@@ -111,6 +114,11 @@ const defaultCards = [
     },
 ];
 
+// Process & About default data (من raneem)
+const defaultProcessCards = [ /* ... نفس البيانات تبعك ... */ ];
+const defaultAbout = [ /* ... نفس البيانات تبعك ... */ ];
+
+// ================= Component =================
 const DashBoard = () => {
     const [faqData, setFaqData] = useState(() => {
         const storedFAQ = localStorage.getItem("faqData");
@@ -118,34 +126,56 @@ const DashBoard = () => {
     });
 
     const [cards, setCards] = useState(() => {
-        const storedCards = localStorage.getItem("cards");
+        const storedCards = localStorage.getItem("cardsData") || localStorage.getItem("cards");
         return storedCards ? JSON.parse(storedCards) : defaultCards;
     });
 
-    // حفظ FAQ في localStorage
+    const [aboutCards, setAboutCards] = useState(() => {
+        const stored = localStorage.getItem("cardsAbout");
+        return stored ? JSON.parse(stored) : defaultAbout;
+    });
+
+    // حفظ البيانات
     useEffect(() => {
         localStorage.setItem("faqData", JSON.stringify(faqData));
     }, [faqData]);
 
-    // حفظ الكروت في localStorage
     useEffect(() => {
+        localStorage.setItem("cardsData", JSON.stringify(cards));
         localStorage.setItem("cards", JSON.stringify(cards));
     }, [cards]);
 
+    useEffect(() => {
+        localStorage.setItem("cardsAbout", JSON.stringify(aboutCards));
+    }, [aboutCards]);
+
+useEffect(() => {
+        const storedProcessCards = JSON.parse(localStorage.getItem("cardsProcess"));
+        if (!storedProcessCards || storedProcessCards.length === 0) {
+            localStorage.setItem("cardsProcess", JSON.stringify(defaultProcessCards));
+        }
+    }, []);
+
     return (
         <div className="lm-section-crud lm_whitespacing_x">
-            
             <h2 className="lm-dashboard-title">Our Services</h2>
             <LMServicesCrad />
+
             <h2>At SquareUp Crud</h2>
             <RDProcessPageCrud />
+
             <h2 className="lm-dashboard-title">Why Choose SquareUp?</h2>
             <LMWhyChooseCrad />
+
+            <h2>Our Story Crud</h2>
             <RDAboutPageCrud />
+
             <MmWorkDashboard />
             <MmContactUsDashboard />
+
             {/* CRUD Sliders */}
             <HSH_CardCRUD cards={cards} setCards={setCards} />
+
             {/* CRUD FAQ */}
             <HSH_FAQCRUD faqData={faqData} setFaqData={setFaqData} />
         </div>

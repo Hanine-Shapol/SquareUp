@@ -1,4 +1,5 @@
 .RDHero{
+    position: relative;
     height: 100vh;
     padding-top: 212px;
     text-align: center;
@@ -7,18 +8,21 @@
     align-items: center;
     background-image: url(/assets/images/Square-effect.png) , url(/assets/images/hero-home-bg.png);
     background-repeat: repeat , no-repeat ;
-    background-position: top, bottom center;
-    background-size: auto , auto;
+    background-position: top,  bottom center;
+    background-size: auto ,auto;
+    object-fit: cover;
+    /* background-clip: content-box; */
     background-color: var(--HeroBGColor);
     border: 1px solid var(--BorderColor);
-    .title{
+    .RDtitle{
+
         width: 50%;
         font-family: 'Barlow';
         font-size: 68px;
         font-weight: 600;
         color: var(--MainFontColor);
     }
-    .description{
+    .RDdescription{
         margin-top: 40px;
         padding: 24px 40px;
         font-family: 'Barlow';
@@ -41,7 +45,7 @@
         }
         
     }
-    .btns{
+    .RDbtns{
         margin-top: 50px;
 
         .RDBtn{
@@ -50,7 +54,7 @@
             font-size: 18px;
             font-weight: 500;
             font-family: 'Barlow';
-            background-color: var(--SecondaryButtonBG) !important;
+            background-color: var(--ColorIcons) !important;
             backdrop-filter: blur(12px);
             border-radius: 10px;
             box-shadow: 0 4px 4px var(--ShadowColor);
@@ -74,12 +78,13 @@
     
 }
 
+
 @media screen and (max-width: 1440px){ 
     .RDHero{
-        .title{
+        .RDtitle{
             font-size: 48px;
         }
-        .description{
+        .RDdescription{
             font-size: 18px;
             span{
                 font-size: 18px;
@@ -87,7 +92,7 @@
             }
 
         }
-        .btns{
+        .RDbtns{
             .RDBtn{
                 padding: 14px 20px;
                 }
@@ -101,11 +106,11 @@
 
 @media screen and (max-width: 992px){ 
     .RDHero{
-        .title{
+        .RDtitle{
             font-size: 34px;
             width: 100%;
         }
-        .description{
+        .RDdescription{
             font-size: 16px;
 
             span {
@@ -116,7 +121,7 @@
                 padding: 0;
             }
         }
-        .btns{
+        .RDbtns{
             .RDBtn{
                 padding: 14px 20px;
                 font-size: 14px;

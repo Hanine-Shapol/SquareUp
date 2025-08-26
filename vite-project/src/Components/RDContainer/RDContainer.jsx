@@ -3,7 +3,7 @@ import './RDContainer.css';
 
 const RDContainer = ({ Cards = [], titleColor }) => {
     return (
-        <div className='RD_Container lm_whitespacing_x'>
+        <div className='RD_Container'>
             {Array.isArray(Cards) && Cards.length > 0 ? (
                 Cards.map((card) => (
                     <RDCard
