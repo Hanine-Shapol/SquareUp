@@ -9,9 +9,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-left: 163px;
-    padding-right: 163px;
+    padding-left: 0;
+    padding-right: 0;
     position: relative;
+    background-color: var(--MainBGColor);
 }
 
 .HSH_Slider {
@@ -27,8 +28,8 @@
     border: none;
     font-size: 32px;
     cursor: pointer;
-    z-index: 2;
-    font-family: "Barlow" ,sans-serif;
+    z-index: 5; /* فوق الكروت */
+    font-family: "Barlow", sans-serif;
     color: var(--MainFontColor);
     position: absolute;
     top: 50%;
@@ -36,11 +37,11 @@
 }
 
 .HSH_NavButton.left {
-    left: -50px;
+    left: 10px; /* فوق الكرت على اليسار */
 }
 
 .HSH_NavButton.right {
-    right: -50px;
+    right: 10px; /* فوق الكرت على اليمين */
 }
 
 .HSH_Slide {
@@ -52,29 +53,28 @@
 }
 
 .HSH_Slide.items-1 .HSH_Card {
-    flex: 1 0 100%;
+    flex: 0 0 100%;
     max-width: 100%;
 }
 
 .HSH_Slide.items-2 .HSH_Card {
-    flex: 1 0 50%;
+    flex: 0 0 50%;
     max-width: 50%;
 }
 
 .HSH_Card {
+    /* height: 532px; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid var(--BorderColor);
-    font-family: "Barlow" ,sans-serif;
+    font-family: "Barlow", sans-serif;
     padding: 20px;
-    margin: 10px;
 }
 
 .HSH_Card h2 {
     color: var(--CardTitleGreenColor);
     font-size: 28px;
-    font-family: "Barlow" ,sans-serif;
     font-weight: 500;
     padding-bottom: 20px;
     text-align: left;
@@ -84,7 +84,6 @@
 .HSH_Card>p {
     color: var(--SecondFontColor);
     font-size: 18px;
-    font-family: "Barlow" ,sans-serif;
     font-weight: 400;
     padding-bottom: 20px;
     text-align: left;
@@ -116,7 +115,6 @@
 }
 
 .HSH_Info h3 {
-    font-family: "Barlow" ,sans-serif;
     font-weight: 500;
     color: var(--MainFontColor);
     font-size: 16px;
@@ -124,7 +122,6 @@
 }
 
 .HSH_Info p {
-    font-family: "Barlow" ,sans-serif;
     font-weight: 400;
     color: var(--SecondFontColor);
     font-size: 14px;
@@ -146,7 +143,6 @@
     border-radius: 8px;
     border: 1px solid var(--BorderColor);
     padding: 18px 20px;
-    font-family: "Barlow" ,sans-serif;
     font-weight: 500;
     background-color: var(--SecondBGColor);
     font-size: 14px;
@@ -181,16 +177,16 @@
 /* الشاشات */
 @media screen and (max-width: 1440px) {
     .HSH_CardsContainer {
-        padding-left: 80px;
-        padding-right: 80px;
+        padding-left: 40px;
+        padding-right: 40px;
     }
 }
 
 @media screen and (max-width: 992px) {
     .HSH_CardsContainer {
         flex-direction: column;
-        padding-left: 40px;
-        padding-right: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
         align-items: center;
         gap: 20px;
     }
@@ -209,10 +205,9 @@
     }
 
     .HSH_NavButton.left {
-        left: -30px;
+        left: 5px;
     }
-
     .HSH_NavButton.right {
-        right: -30px;
+        right: 5px;
     }
 }

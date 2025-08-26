@@ -1,8 +1,14 @@
-import "./AboutUS.css"
+
+import "./AboutUS.css";
 import { useEffect, useState } from "react";
 import RDContainer from "../../components/RDContainer/RDContainer";
 import { Outlet } from "react-router-dom";
 
+import SaTodaySquareUp from '../../components/SaTodaySquareUp/SaTodaySquareUp';
+import SaAboutSquareUp from "../../Components/SaAboutSquareUp/SaAboutSquareUp";
+import MmHeadOfSection from "../../Components/MmHeadOfSection/MmHeadOfSection";
+
+// ============== Default About Data ==============
 const defaultAbout = [
     { id: 1, number: "01", title: "Design", description: "Once upon a time, in a world driven by technology, a group of talented designers came together with a shared vision. They believed that design could shape the way people interacted with digital products. With their passion for aesthetics and usability, they founded SquareUp Digital Product Agency's design department. Their mission was to create visually stunning and user-friendly interfaces that would leave a lasting impression." },
     { id: 2, number: "02", title: "Engineering", description: "Meanwhile, a team of brilliant engineers was busy crafting the backbone of digital innovation. With their expertise in coding and development, they founded the engineering division of SquareUp. They believed that technology had the power to transform ideas into reality. Their mission was to build robust, scalable, and cutting-edge digital solutions that would push the boundaries of what was possible." },
@@ -12,6 +18,7 @@ const defaultAbout = [
     { id: 6, number: "06", title: "Driving Success", description: "With each project, SquareUp's reputation grew. Their portfolio expanded to include a diverse range of industries and their impact was felt far and wide. From startups to established enterprises, businesses sought out SquareUp for their expertise in creating digital products that delivered tangible results. SquareUp's success was driven by their passion for innovation, their dedication to quality, and their commitment to helping their clients succeed in the digital world." },
 ];
 
+// ================= Component =================
 const About = () => {
     const [cards, setCards] = useState([]);
 
@@ -24,15 +31,46 @@ const About = () => {
         }
     }, []);
 
-    return (
-        <div className="lm_whitespacing_x">
-            <h1 className="RDTilte">Our Story</h1>
-            <RDContainer Cards={cards} titleColor="var(--CardTitleColor)" />
-            <Outlet/>
-        </div>
+return (
+        <>
+            <div className="lm_whitespacing_x">
+                {/* Header Section */}
+                <MmHeadOfSection
+                    title="About Us"
+                    subtitle="Welcome to SquareUp, where collaboration, expertise, and client-centricity intersect to shape the future of digital innovation."
+                    bgImage="/assets/images/head-bg-5.png"
+                />
+
+                {/* About SquareUp Section */}
+                <SaAboutSquareUp
+                    title="About SquareUp"
+                    subtitle="SquareUp is a digital product agency that is passionate about crafting exceptional digital experiences. We specialize in design, engineering, and project management, helping businesses thrive in the digital landscape. At SquareUp, we follow a structured and collaborative process to ensure the successful delivery of exceptional digital products. Our process combines industry best practices, creative thinking, and a client-centric approach."
+                    bgImage="./assets/images/head-bg-5-bw.png"
+                    icone="/assets/images/Logo-colorfull.svg"
+                    line1="/assets/images/line-left.svg"
+                    line2="/assets/images/line-right.svg"
+                    line3="/assets/images/line-up.svg"
+                    line4="/assets/images/Line-down.svg"
+                />
+
+                {/* Today SquareUp Section */}
+                <SaTodaySquareUp
+                    icon="/assets/images/Logo.svg"
+                    title="Today, SquareUp Continues to Thrive as a Leading Digital Product Agency....."
+                    subtitle="Combining the power of design, engineering, and project management to create transformative digital experiences. They invite you to join them on their journey and discover how they can help bring your digital ideas to life."
+                    subtitleCta="Welcome to SquareUp"
+                    highlightCta="Where collaboration, Expertise, and Client-Centricity Intersect to Shape the Future of Digital Innovation."
+                    linkTo="/contact"
+                    buttonText="Start Project"
+                />
+
+                {/* Our Story Section */}
+                <h1>Our Story</h1>
+                <RDContainer Cards={cards} titleColor="var(--CardTitleGreenColor)" />
+                <Outlet />
+            </div>
+        </>
     );
 };
 
 export default About;
-
-

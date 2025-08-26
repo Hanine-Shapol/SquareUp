@@ -8,7 +8,7 @@ const LMServices = ({ image, title, paragraph, btn, showButton = true, horizonta
                 <div className="lm-card-img">
                     <img src={image} alt="icon" className='lm-img' />
                 </div>
-                <h1 className="lm-card-title">{title}</h1>
+                <h3 className="lm-card-title">{title}</h3>
             </div>
             <p className="lm-card-paragraph">{paragraph}</p>
             {showButton && (

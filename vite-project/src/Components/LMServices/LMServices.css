@@ -1,74 +1,73 @@
 .lm-cards-container.three-columns {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding-top: 106px;
     background-color: var(--MainBGColor);
 
     /* نفس الكرت */
-    .lm-card{
+    .lm-card {
         max-width: 532px;
         min-height: 577px;
         padding: 50px;
     }
 
     /* عنوان */
-    .lm-card-title{
+    .lm-card-title {
         font-family: 'Barlow';
         font-size: 30px;
         font-weight: 600;
         margin-bottom: 20px;
-        color:var(--MainFontColor);
+        color: var(--MainFontColor);
     }
 
     /* نص */
-    .lm-card-paragraph{
+    .lm-card-paragraph {
         font-size: 18px;
-        color:var(--MainFontColor);
+        color: var(--MainFontColor);
     }
 
     /* زر */
-    .lm-card-button{
+    .lm-card-button {
         padding: 18px 16px;
         border-radius: 8px;
         text-align: center;
         background-color: var(--SecondBGColor);
         margin-top: auto;
     }
-    .lm-link{
+
+    .lm-link {
         text-decoration: none;
         text-align: center;
         background-color: var(--SecondBGColor);
         font-family: 'Barlow';
         font-size: 18px;
         font-weight: 500;
-        color:var(--MainFontColor);
+        color: var(--MainFontColor);
     }
 }
 
 .lm-cards-container.two-columns {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding-top: 106px;
     background-color: var(--MainBGColor);
 
     /* نفس الكرت */
-    .lm-card{
+    .lm-card {
         max-width: 798.5px;
         min-height: 378px;
         padding: 80px;
     }
 
     /* صورة */
-    .lm-card-img{
+    .lm-card-img {
         margin-bottom: 0px;
     }
 
     /* عنوان */
-    .lm-card-title{
+    .lm-card-title {
         font-family: 'Barlow';
         font-size: 26px;
         font-weight: 500;
-        color:var(--MainFontColor);
+        color: var(--MainFontColor);
     }
 
     .lm-container.horizontal {
@@ -78,47 +77,44 @@
         margin-bottom: 40px;
     }
 
-     /* نص */
-    .lm-card-paragraph{
+    /* نص */
+    .lm-card-paragraph {
         font-size: 20px;
-        color:var(--MainFontColor);
+        color: var(--MainFontColor);
     }
 }
 
 /* نفس الكرت */
-.lm-card{
+.lm-card {
     border: 1px solid var(--SecondBGColor);
     display: flex;
     flex-direction: column;
 }
 
 /* صورة */
-.lm-card-img{
+.lm-card-img {
     width: 88px;
     height: 88px;
-    background: 
-    linear-gradient(225deg, #9dff0009 0%, transparent 100%),
-    linear-gradient(45deg, #242424 0%, transparent 100%);
-    /* background: 
-    conic-gradient(from 45deg at 0% 0%, #9dff001f 0deg, rgba(158,255,0,0) 90deg),
-    linear-gradient(to bottom, #242424 0%, rgba(36,36,36,0) 100%); */
+    background:
+        linear-gradient(225deg, var(--ColorDivIcon) 0%, transparent 100%),
+        linear-gradient(45deg, var(--SecondBGColor) 0%, transparent 100%);
     border-radius: 10px;
     border: 1px solid var(--ColorFooterIcon);
-    /* border: 1px solid linear-gradient(to bottom, #2E2E2E 0%, transparent 100%),; */
     padding: 24px;
     margin-bottom: 40px;
 }
-.lm-img{
+
+.lm-img {
     background-color: transparent;
     width: 40px;
     height: 40px;
 }
 
 /* نص */
-.lm-card-paragraph{
+.lm-card-paragraph {
     font-family: 'Barlow';
     font-weight: 400;
-    color:var(--MainFontColor);
+    color: var(--MainFontColor);
 }
 
 
@@ -128,30 +124,31 @@
     .lm-cards-container.three-columns {
 
         /* نفس الكرت */
-        .lm-card{
+        .lm-card {
             max-width: 426.67px;
             min-height: 510px;
             padding: 40px;
         }
 
         /* عنوان */
-        .lm-card-title{
+        .lm-card-title {
             font-size: 24px;
             margin-bottom: 14px;
         }
 
         /* نص */
-        .lm-card-paragraph{
+        .lm-card-paragraph {
             font-size: 16px;
             margin-bottom: 24px;
         }
 
         /* زر */
-        .lm-card-button{
+        .lm-card-button {
             padding: 14px 16px;
             border-radius: 6px;
         }
-        .lm-link{
+
+        .lm-link {
             font-size: 14px;
         }
     }
@@ -159,14 +156,14 @@
     .lm-cards-container.two-columns {
 
         /* نفس الكرت */
-        .lm-card{
+        .lm-card {
             max-width: 639.5px;
             min-height: 292px;
             padding: 60px;
         }
 
         /* عنوان */
-        .lm-card-title{
+        .lm-card-title {
             font-size: 20px;
         }
 
@@ -176,20 +173,21 @@
         }
 
         /* نص */
-        .lm-card-paragraph{
+        .lm-card-paragraph {
             font-size: 16px;
         }
     }
 
     /* صورة */
-    .lm-card-img{
+    .lm-card-img {
         width: 70px;
         height: 70px;
         border-radius: 8px;
         padding: 20px;
         margin-bottom: 30px;
     }
-    .lm-img{
+
+    .lm-img {
         width: 30px;
         height: 30px;
     }
@@ -198,7 +196,9 @@
 
 
 @media screen and (max-width: 992px) {
-    .lm-cards-container.three-columns, .lm-cards-container.two-columns  {
+
+    .lm-cards-container.three-columns,
+    .lm-cards-container.two-columns {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -207,12 +207,12 @@
     .lm-cards-container.three-columns {
 
         /* نفس الكرت */
-        .lm-card{
+        .lm-card {
             max-width: 358px;
             min-height: min-content;
             padding: 30px;
 
-            .lm-container{
+            .lm-container {
                 display: flex;
                 align-items: center;
                 gap: 24px;
@@ -220,28 +220,28 @@
         }
 
         /* عنوان */
-        .lm-card-title{
+        .lm-card-title {
             font-size: 20px;
             margin-bottom: 0px;
         }
 
         /* نص */
-        .lm-card-paragraph{
+        .lm-card-paragraph {
             font-size: 14px;
         }
     }
 
-        .lm-cards-container.two-columns {
+    .lm-cards-container.two-columns {
 
         /* نفس الكرت */
-        .lm-card{
+        .lm-card {
             max-width: 358px;
             min-height: min-content;
             padding: 40px 30px;
         }
 
         /* عنوان */
-        .lm-card-title{
+        .lm-card-title {
             font-size: 20px;
         }
 
@@ -250,19 +250,21 @@
         }
 
         /* نص */
-        .lm-card-paragraph{
+        .lm-card-paragraph {
             font-size: 14px;
         }
     }
-      /* صورة */
-    .lm-card-img{
+
+    /* صورة */
+    .lm-card-img {
         width: 58px;
         height: 58px;
         border-radius: 6px;
         padding: 16px;
         margin-bottom: 0px;
     }
-    .lm-img{
+
+    .lm-img {
         width: 26px;
         height: 26px;
     }

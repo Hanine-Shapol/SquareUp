@@ -14,9 +14,8 @@
     /* background-clip: content-box; */
     background-color: var(--HeroBGColor);
     border: 1px solid var(--BorderColor);
-
-
     .RDtitle{
+
         width: 50%;
         font-family: 'Barlow';
         font-size: 68px;
