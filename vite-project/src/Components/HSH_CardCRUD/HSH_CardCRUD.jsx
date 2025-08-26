@@ -1,53 +1,65 @@
-
-import React, { useState, useEffect } from "react";
+// src/Components/HSH_CardCRUD/HSH_CardCRUD.jsx
+import { useState } from "react";
 import "./HSH_CardCRUD.css";
 
-const HSH_CardCRUD = ({ cards, setCards }) => {
-    const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
-    const [name, setName] = useState("");
-    const [job, setJob] = useState("");
-    const [url, setUrl] = useState("");
-    const [image, setImage] = useState(null);
-    const [editingIndex, setEditingIndex] = useState(null);
+const defaultCards = [
+    {
+        id: 1,
+        title: "SquareUp has been Instrumental in Transforming our Online Presence.",
+        description:
+            "Their team's expertise in web development and design resulted in a visually stunning and user-friendly e-commerce platform.",
+        image: "/assets/images/John.jpg",
+        name: "John Smith",
+        job: "CEO of Chic Boutique",
+        url: "https://focal-x.com/",
+    },
+];
 
-    // Load cards from localStorage on mount
-    useEffect(() => {
-        const storedCards = JSON.parse(localStorage.getItem("sliderCards")) || [];
-        if (storedCards.length > 0) {
-            setCards(storedCards);
-        }
-    }, [setCards]);
+const HSH_CardCRUD = () => {
+    const stored = localStorage.getItem("sliderCards");
+    const [cards, setCards] = useState(
+        stored ? JSON.parse(stored) : defaultCards
+    );
+    const [formData, setFormData] = useState({
+        title: "",
+        description: "",
+        name: "",
+        job: "",
+        url: "",
+        image: null,
+    });
+    const [editIndex, setEditIndex] = useState(null);
+
+    const saveToLocalStorage = (arr) => {
+        localStorage.setItem("sliderCards", JSON.stringify(arr));
+    };
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({ ...prev, [name]: value }));
+    };
 
     const handleImageUpload = (e) => {
         const file = e.target.files[0];
         if (!file) return;
         const reader = new FileReader();
-        reader.onloadend = () => setImage(reader.result);
+        reader.onloadend = () =>
+            setFormData((prev) => ({ ...prev, image: reader.result }));
         reader.readAsDataURL(file);
     };
 
-    const saveToLocalStorage = (cardsArray) => {
-        localStorage.setItem("sliderCards", JSON.stringify(cardsArray));
-    };
-
     const handleSubmit = () => {
-        if (!title || !description) return;
+        if (!formData.title || !formData.description) return;
 
         const newCard = {
-            id: editingIndex !== null ? cards[editingIndex].id : Date.now(),
-            title,
-            description,
-            name,
-            job,
-            url,
-            image,
+            id: editIndex !== null ? cards[editIndex].id : Date.now(),
+            ...formData,
         };
 
         let updatedCards;
-        if (editingIndex !== null) {
-            updatedCards = cards.map((card, i) => (i === editingIndex ? newCard : card));
-            setEditingIndex(null);
+        if (editIndex !== null) {
+            updatedCards = cards.map((c, i) => (i === editIndex ? newCard : c));
+            setEditIndex(null);
         } else {
             updatedCards = [...cards, newCard];
         }
@@ -55,45 +67,73 @@ const HSH_CardCRUD = ({ cards, setCards }) => {
         setCards(updatedCards);
         saveToLocalStorage(updatedCards);
 
-        setTitle("");
-        setDescription("");
-        setName("");
-        setJob("");
-        setUrl("");
-        setImage(null);
+        setFormData({
+            title: "",
+            description: "",
+            name: "",
+            job: "",
+            url: "",
+            image: null,
+        });
     };
 
-    const handleEdit = (index) => {
-        const card = cards[index];
-        setTitle(card.title);
-        setDescription(card.description);
-        setName(card.name);
-        setJob(card.job);
-        setUrl(card.url);
-        setImage(card.image);
-        setEditingIndex(index);
+    const handleEdit = (i) => {
+        setFormData(cards[i]);
+        setEditIndex(i);
     };
 
-    const handleDelete = (index) => {
-        const updatedCards = cards.filter((_, i) => i !== index);
-        setCards(updatedCards);
-        saveToLocalStorage(updatedCards);
+    const handleDelete = (i) => {
+        const updated = cards.filter((_, idx) => idx !== i);
+        setCards(updated);
+        saveToLocalStorage(updated);
     };
 
     return (
         <div className="crud-container">
             <h2>Manage Slider Cards</h2>
+
             <div className="crud-form">
-                <input type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
-                <input type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
-                <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
-                <input type="text" placeholder="Job" value={job} onChange={(e) => setJob(e.target.value)} />
-                <input type="text" placeholder="Website URL" value={url} onChange={(e) => setUrl(e.target.value)} />
+                <input
+                    type="text"
+                    name="title"
+                    placeholder="Title"
+                    value={formData.title}
+                    onChange={handleChange}
+                />
+                <input
+                    type="text"
+                    name="description"
+                    placeholder="Description"
+                    value={formData.description}
+                    onChange={handleChange}
+                />
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                />
+                <input
+                    type="text"
+                    name="job"
+                    placeholder="Job"
+                    value={formData.job}
+                    onChange={handleChange}
+                />
+                <input
+                    type="text"
+                    name="url"
+                    placeholder="Website URL"
+                    value={formData.url}
+                    onChange={handleChange}
+                />
                 <input type="file" accept="image/*" onChange={handleImageUpload} />
                 <button onClick={handleSubmit}>
-                    {editingIndex !== null ? "Update Card" : "Add Card"}
+                    {editIndex !== null ? "Update Card" : "Add Card"}
                 </button>
             </div>
+
             <table className="crud-table">
                 <thead>
                     <tr>
@@ -102,41 +142,46 @@ const HSH_CardCRUD = ({ cards, setCards }) => {
                         <th>Description</th>
                         <th>Name</th>
                         <th>Job</th>
-                        <th>Website URL</th>
+                        <th>Website</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     {cards.length > 0 ? (
-                        cards.map((card, index) => (
-                            <tr key={card.id}>
-                                <td>
-                                    {card.image && (
-                                        <img
-                                            src={card.image}
-                                            alt={card.name}
-                                            style={{ width: "50px", height: "50px", borderRadius: "8px" }}
-                                        />
-                                    )}
-                                </td>
-                                <td>{card.title}</td>
-                                <td>{card.description}</td>
-                                <td>{card.name}</td>
-                                <td>{card.job}</td>
-                                <td>{card.url}</td>
-                                <td>
-                                    <button onClick={() => handleEdit(index)}>Edit</button>
-                                    <button onClick={() => handleDelete(index)}>Delete</button>
-                                </td>
-                            </tr>
-                        ))
+                        cards.map((card, i) => (
+
+                    <tr key={card.id}>
+                        <td>
+                            {card.image && (
+                                <img
+                                    src={card.image}
+                                    alt={card.name}
+                                    style={{
+                                        width: "50px",
+                                        height: "50px",
+                                        borderRadius: "8px",
+                                    }}
+                                />
+                            )}
+                        </td>
+                        <td>{card.title}</td>
+                        <td>{card.description}</td>
+                        <td>{card.name}</td>
+                        <td>{card.job}</td>
+                        <td>{card.url}</td>
+                        <td>
+                            <button onClick={() => handleEdit(i)}>Edit</button>
+                            <button onClick={() => handleDelete(i)}>Delete</button>
+                        </td>
+                    </tr>
+                    ))
                     ) : (
-                        <tr>
-                            <td colSpan="7" style={{ textAlign: "center", padding: "20px" }}>
-                                No cards found
-                            </td>
-                        </tr>
-                    )}
+                    <tr>
+                        <td colSpan="7" style={{ textAlign: "center" }}>
+                            No cards found
+                        </td>
+                    </tr>
+          )}
                 </tbody>
             </table>
         </div>

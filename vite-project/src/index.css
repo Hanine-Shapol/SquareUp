@@ -17,7 +17,7 @@
     --ColorFooterIcon: #2E2E2E;
     --ColorDashTh: #26262633;
     --Colorred: #e20707 ;
-    --myprimary-whitespacing: 162px;
+    --ColorDivIcon: #9dff0007;
     /*---------- Color From Moamen ------------*/
     --PlaceholderColor: #656567;
     --LabelLightColor: #FDFFFA;
@@ -26,6 +26,7 @@
     --DangerColor: #ff1d1d;
     --HeadGradientStart: rgba(172, 255, 36, 0);
     --HeadGradientEnd: rgba(172, 255, 36, 1);
+    --myprimary-whitespacing: 162px;
 }
 
 * {
@@ -148,6 +149,7 @@ font-weight: 100;
 .lm_whitespacing_x {
     padding-left: var(--myprimary-whitespacing);
     padding-right: var(--myprimary-whitespacing);
+    background-color: var(--MainBGColor);
 }
 
 

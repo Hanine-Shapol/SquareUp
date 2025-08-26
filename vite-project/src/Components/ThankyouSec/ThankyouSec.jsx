@@ -15,6 +15,6 @@ const ThankyouSec = ({ bgImage ,image, title, subtitle, buttonText, linkTo}) => 
             </div>
         </div>
             </div>
-     )
+    )
 }
 export default ThankyouSec

@@ -1,17 +1,14 @@
-*{
-    
-}
 .SaTodaySquareUp {
   width: 100%;
-  max-width: 1596px; 
-  margin: 0 auto;     
-  padding: 80px;      
+  margin: 0;
+  padding: 80px 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 50px;
-  border: 1px solid var(--SecondBGColor );
-  Background-color: var(--MainBGColor);
+  border: 1px solid var(--SecondBGColor);
+  background-color: var(--MainBGColor);
+  box-sizing: border-box;
 }
 
 /* --- Top Section --- */
@@ -20,20 +17,20 @@
   align-items: center;
   gap: 24px;
   width: 100%;
-  max-width: 1436px;
   flex-wrap: nowrap;
 }
 
 .SaTodaySquareUp .icon-box {
-  width: 150.7px;
-  height: 150px;
+  width: 100.7px;
+  height: 100px;
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--IDentity_color);
-  box-shadow: 0px 0px 23px 16px #FFFFFF80 inset;
+  box-shadow: 0 0 23px 16px #ffffff80 inset;
 }
+
 .SaTodaySquareUp .icon-box img {
   width: 60%;
   height: 60%;
@@ -41,157 +38,128 @@
   background-color: var(--IDentity_color);
 }
 
-.SaTodaySquareUp .text-box{
-   display: flex;
-   flex-direction: column;
-   width: 1245px;
-   white-space: normal;
-   word-break: break-word;
-   gap: 20px;
-
+.SaTodaySquareUp .text-box {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 20px;
+  word-break: break-word;
 }
 
 .SaTodaySquareUp .text-box .title {
-  font-family: Barlow;
+  font-family: "Barlow", "sans-serif";
   font-size: 30px;
-  font-weight: 500px;
+  font-weight: 500;
   color: var(--SecondPColor);
   line-height: 100%;
 }
 
 .SaTodaySquareUp .text-box .subtitle {
-  font-family: Inter;
+  font-family: "Inter", "sans-serif";
   font-size: 18px;
   color: var(--SecondPColor);
 }
 
-/* --- CTA Bar --- */
 .SaTodaySquareUp .cta-bar {
-    width: 100%;
-    background:var(--SecondaryButtonBG);
-    border-radius: 12px;
-    padding: 30px 22.5px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: nowrap;
-    border: 1px solid var(--SecondBGColor);
+  width: 100%;
+  background: var(--SecondaryButtonBG);
+  border-radius: 12px;
+  padding: 30px 22.5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border: 1px solid var(--SecondBGColor);
+  box-sizing: border-box;
 }
 
 .SaTodaySquareUp .cta-bar .small-text {
-  font-size: Barlow;
-  width: 192px;
-  height: 24px;
+  font-family: "Barlow", "sans-serif";
+  min-width: 150px;
   font-size: 20px;
   color: var(--SecondPColor);
-  background: none;
 }
-.SaTodaySquareUp .cta-bar .countainer-highlight {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 934px;
-    background: var(--SecondBGColor);
-    padding: 14px 20px;
-    gap: 10px;
-    border-radius: 8px;
-    flex-wrap: nowrap;
 
+.SaTodaySquareUp .cta-bar .countainer-highlight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  background: var(--SecondBGColor);
+  padding: 14px 20px;
+  gap: 10px;
+  border-radius: 8px;
 }
+
 .SaTodaySquareUp .cta-bar .highlight-text {
-  font-family: Barlow;
-  color:var(--MainFontColor);
-  max-width: 894px;
-  font-size: 20px; 
-  font-weight: 400px;
-  background: none;
-  
+  font-family: "Barlow", "sans-serif";
+  color: var(--MainFontColor);
+  width: 100%;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .SaTodaySquareUp .cta-button {
   display: inline-block;
-  width: 170px;
+  min-width: 170px;
   padding: 18px 34px;
-  color:var(--MainBGColor);
-  background-color:var(--IDentity_color);
+  color: var(--MainBGColor);
+  background-color: var(--IDentity_color);
   border-radius: 8px;
   text-decoration: none;
-  font-family: Barlow;
+  font-family: "Barlow", "sans-serif";
   font-size: 18px;
   transition: background-color 0.3s ease;
-  
 }
+
 .SaTodaySquareUp .cta-button:hover {
-  background: #99e62f;
+  background: var(--IDentity_color);
 }
 
 /* --- Responsive --- */
-@media screen and (max-width: 1440px) {
+@media (max-width: 1440px) {
   .SaTodaySquareUp {
-    width: 100%;
-    max-width: 1436px;
-    padding: 40px;
+    padding: 40px 0;
     gap: 40px;
-    display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap;
   }
 
-
   .SaTodaySquareUp .top-section {
-    max-width: 1160px;
-    height: auto;
     gap: 30px;
-    width: 1160;
   }
 
   .SaTodaySquareUp .text-box {
-    width: 1029px;
-    height: auto;
     gap: 14px;
   }
+
   .SaTodaySquareUp .text-box .title {
     font-size: 24px;
   }
+
   .SaTodaySquareUp .text-box .subtitle {
     font-size: 16px;
-    max-width: 1029px;
-    white-space: normal;
-    word-break: break-word;
   }
+
   .SaTodaySquareUp .cta-bar {
-    width: 100%;
-    max-width: 1160px;
     padding: 30px;
     gap: 16px;
-    flex-wrap: nowrap;
   }
+
   .SaTodaySquareUp .cta-bar .small-text {
-    width: auto;
-    min-width: 150px;
-    flex-shrink: 0;
     font-size: 18px;
-  }
-  .SaTodaySquareUp .cta-bar .countainer-highlight {
-    width: 100%;
-    flex-wrap: nowrap;
   }
 
   .SaTodaySquareUp .cta-bar .highlight-text {
-    width: 100%;
     font-size: 16px;
     flex: 1;
   }
-  .SaTodaySquareUp .cta-button {
-    flex-shrink: 0;
-    min-width: 170px;
 }
-@media screen and (max-width: 992px) {
+
+@media (max-width: 992px) {
   .SaTodaySquareUp {
-    max-width: 358px;
-    padding: 40px 24px;
+    padding: 40px 0;
     gap: 30px;
   }
 
@@ -199,8 +167,6 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 100%;
-    height: auto;
     gap: 24px;
   }
 
@@ -208,12 +174,10 @@
     width: 120px;
     height: 120px;
     border-radius: 16px;
-    box-shadow: 0px 0px 20px 12px #ffffff80 inset;
+    box-shadow: 0 0 20px 12px #ffffff80 inset;
   }
 
   .SaTodaySquareUp .text-box {
-    width: 100%;
-    height: auto;
     gap: 16px;
   }
 
@@ -231,14 +195,12 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 100%;
     padding: 24px;
     gap: 20px;
   }
 
   .SaTodaySquareUp .cta-bar .small-text {
     width: 100%;
-    height: auto;
     font-size: 18px;
   }
 
@@ -248,7 +210,6 @@
   }
 
   .SaTodaySquareUp .cta-bar .highlight-text {
-    width: 100%;
     font-size: 18px;
   }
 
@@ -258,5 +219,4 @@
     padding: 16px 24px;
     font-size: 16px;
   }
-}
 }

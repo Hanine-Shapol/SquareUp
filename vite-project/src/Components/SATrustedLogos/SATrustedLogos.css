@@ -4,13 +4,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  /*gap: 20px;*/
   border-width: 0px 1px 1px 1px;
   border-style: solid;
-  border-color:var(--SecondBGColor);
+  border-color: var(--SecondBGColor);
   background-color: var(--MainBGColor);
-  width: 1596px;
 
+  width: 100%;         /* ياخد كامل عرض الشاشة */
+  box-sizing: border-box;
 }
 
 .trusted-header {
@@ -20,12 +20,13 @@
   border: 1px solid var(--SecondBGColor);
   border-radius: 100px;
   padding: 20px 34px;
-  width: 286px;
+  width: auto;
+  max-width: 100%;
 }
 
 .trusted-header-text {
   color: #FDFFFA;
-  min-width: 218px ;
+  min-width: 218px;
   font-family: Barlow, sans-serif;
   font-weight: 500;
   font-size: 18px;
@@ -33,51 +34,36 @@
 
 .TrustedLogos-content {
   width: 100%;
-  display: flex;
+  display: grid;                            /* Grid بدل Flex */
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+  justify-items: center;
   align-items: center;
-  justify-content: space-between;
+  gap: 20px;                                /* مسافة بين اللوغوهات */
+  padding: 20px 40px;
   background: transparent !important;
-
+  box-sizing: border-box;
 }
 
 .TrustedLogos-content img {
-  width: auto;
+  max-width: 100%;
+  height: auto;
   object-fit: contain;
   background: transparent !important;
   filter: brightness(0) invert(1);
   opacity: 0.8;
-
 }
 
 .TrustedLogos-content img:hover {
   opacity: 1;
-  
 }
-@media screen and (max-width: 1440px) {
-  .trustedlogo {
-    padding: 0 80px;
-  }
-  .TrustedLogos-content {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  }
-}
- /* Adding mobile media query for grid layout matching Figma design */
+
+
 @media screen and (max-width: 992px) {
   .trustedlogo {
     width: 100%;
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    
     border: 1px solid var(--SecondBGColor);
-    border-width: 0px, 1px, 1px, 1px;
     padding: 16px;
     margin: 4px;
-
-    
   }
 
   .trusted-header {
@@ -92,37 +78,29 @@
   }
 
   .TrustedLogos-content {
-    width: 100%;
-    
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(3, 1fr);
-    max-width:max-content;
-    justify-items: center;
-    align-items: center;
-    padding: 8px;                             
+    grid-template-columns: 1fr 1fr;   /* كل سطر فيه لوغوين */
+    gap: 12px;
+    padding: 8px;
   }
 
   .TrustedLogos-content img {
     height: 24px;
-    width: auto;
     max-width: 120px;
   }
-  .trusted-icon1,
-.trusted-icon2,
-.trusted-icon3,
-.trusted-icon4,
-.trusted-icon5,
-.trusted-icon6 {
 
-  border: 1px solid var(--SecondBGColor);
-  padding: 16px 20px;                       
-  width: 100%;               
-  min-width: 143px;  
-  max-width: 140px;                         
-  min-height: 60px;                           
-  display: flex;                               
-  align-items: center;                       
-  justify-content: center; 
-}
+  .trusted-icon1,
+  .trusted-icon2,
+  .trusted-icon3,
+  .trusted-icon4,
+  .trusted-icon5,
+  .trusted-icon6 {
+    border: 1px solid var(--SecondBGColor);
+    padding: 16px 20px;
+    width: 100%;
+    max-width: 140px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
