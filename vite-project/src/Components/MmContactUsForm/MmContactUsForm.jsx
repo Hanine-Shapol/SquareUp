@@ -1,4 +1,6 @@
+
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import "./MmContactUsForm.css";
 
 const MmContactUsForm = ({ editingItem, onSave }) => {
@@ -27,7 +29,6 @@ const MmContactUsForm = ({ editingItem, onSave }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         const newItem = {
             id: editingItem ? editingItem.id : Date.now(),
             fullName,
@@ -35,24 +36,66 @@ const MmContactUsForm = ({ editingItem, onSave }) => {
             resons,
             yourMessage,
         };
-
         if (onSave) {
             onSave(newItem, !!editingItem);
         } else {
             const stored = localStorage.getItem("contactUsEntries");
             const items = stored ? JSON.parse(stored) : [];
-            localStorage.setItem("contactUsEntries", JSON.stringify([...items, newItem]));
+            localStorage.setItem(
+                "contactUsEntries",
+                JSON.stringify([...items, newItem])
+            );
         }
-
         setFullName("");
         setEmail("");
         setYourMessage("");
         setResons([]);
     };
 
+    const socialIcons = [
+        { name: "Facebook", url: "https://www.facebook.com/focal.x.agency/", icon: "/assets/images/facebook.svg" },
+        { name: "Twitter", url: "https://twitter.com/focal_x_agency?t=4jk3EdcOYPA9mvvWFnjuww&s=09", icon: "/assets/images/twitter.svg" },
+        { name: "LinkedIn", url: "https://www.linkedin.com/company/focal-x-agency/", icon: "/assets/images/linkedin.svg" },
+    ];
+
+    const openSocialLink = (link) => {
+        window.open(link, "_blank", "noopener,noreferrer");
+    };
+
     return (
-        <div className="form-contact-us-container">
-            <form className="contact-us-form" onSubmit={handleSubmit}>
+        <motion.div
+            className="form-contact-us-container"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+            {/* up form */}
+            <div className='lm-contact-contactIcons'>
+                {socialIcons.map((item, index) => (
+                    <motion.div
+                        key={index}
+                        className='lm-contact-contactIcon'
+                        onClick={() => openSocialLink(item.url)}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                        <img src={item.icon} alt={item.name} className={`icon${index + 1}`} />
+                        <span className='lm_font_size_weight3'>{item.name === "LinkedIn" ? "Get LinkedIn" : item.name}</span>
+                    </motion.div>
+                ))}
+            </div>
+
+            <motion.form
+                className="contact-us-form"
+                onSubmit={handleSubmit}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.8 }}
+            >
                 <div className="name-and-email-container">
                     <div className="name-email">
                         <label htmlFor="full-name">Full Name</label>
@@ -64,7 +107,6 @@ const MmContactUsForm = ({ editingItem, onSave }) => {
                             onChange={(e) => setFullName(e.target.value)}
                         />
                     </div>
-
                     <div className="name-email">
                         <label htmlFor="email">Email</label>
                         <input
@@ -76,50 +118,27 @@ const MmContactUsForm = ({ editingItem, onSave }) => {
                         />
                     </div>
                 </div>
-
                 <div className="resons-container">
                     <label>Why are you contacting us?</label>
-
                     <div className="resons">
-                        <label>
-                            <input className="reson-checkbox"
-                                type="checkbox"
-                                value="Web Design"
-                                checked={resons.includes("Web Design")}
-                                onChange={handleCheckboxChange}
-                            />
-                            Web Design
-                        </label>
-
-                        <label>
-                            <input className="reson-checkbox"
-                                type="checkbox"
-                                value="Collaboration"
-                                checked={resons.includes("Collaboration")}
-                                onChange={handleCheckboxChange}
-                            />
-                            Collaboration
-                        </label>
-
-                        <label>
-                            <input
-                                type="checkbox" className="reson-checkbox"
-                                value="Mobile App Design"
-                                checked={resons.includes("Mobile App Design")}
-                                onChange={handleCheckboxChange}
-                            />
-                            Mobile App Design
-                        </label>
-
-                        <label>
-                            <input className="reson-checkbox"
-                                type="checkbox"
-                                value="Others"
-                                checked={resons.includes("Others")}
-                                onChange={handleCheckboxChange}
-                            />
-                            Others
-                        </label>
+                        {["Web Design", "Collaboration", "Mobile App Design", "Others"].map((reson, i) => (
+                            <motion.label
+                                key={i}
+                                initial={{ opacity: 0, x: -10 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true, amount: 0.3 }}
+                                transition={{ duration: 0.5, delay: i * 0.1 }}
+                            >
+                                <input
+                                    type="checkbox"
+                                    className="reson-checkbox"
+                                    value={reson}
+                                    checked={resons.includes(reson)}
+                                    onChange={handleCheckboxChange}
+                                />
+                                {reson}
+                            </motion.label>
+                        ))}
                     </div>
                 </div>
 
@@ -133,9 +152,49 @@ const MmContactUsForm = ({ editingItem, onSave }) => {
                     ></textarea>
                 </div>
 
-                <input className="send" type="submit" value={editingItem ? "Update" : "Submit"} />
-            </form>
-        </div>
+                <motion.input
+                    className="send"
+                    type="submit"
+                    value={editingItem ? "Update" : "Submit"}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                />
+            </motion.form>
+
+            {/* down form */}
+            <motion.div
+                className="lm-contact-down-footer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.8 }}
+            >
+                <div className="lm-contact-down-footer-buttom">
+                    <p>Operating Days</p>
+                    <p className="monday-to-friday">Monday to Friday</p>
+                </div>
+                <div className="lm-contact-line"></div>
+                <div className='lm-contact-down-footer-stay-Connected'>
+                    <p className="lm_font_size_weight2">Stay Connected</p>
+                    <div className="lm-contact-socialIcons">
+                        {socialIcons.map((item, index) => (
+                            <motion.div
+                                key={index}
+                                className="lm-contact-socialLink"
+                                onClick={() => openSocialLink(item.url)}
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.3 }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                            >
+                                <img src={item.icon} alt={item.name} className="lm-contact-socialIcon" />
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </motion.div>
+        </motion.div>
     );
 };
 

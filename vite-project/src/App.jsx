@@ -37,12 +37,12 @@ function App() {
         image="/assets/images/Logo-full.svg"
         items={[
           { url: "/", content: "Home" },
-          { url: "", content: "Service" },
+          { url: "#", content: "Service" },
           { url: "/Work", content: "Work" },
           { url: "/Process", content: "Process" },
           { url: "/AboutUS", content: "About" },
-          { url: "", content: "Career" },
-          { url: "/DashBoard", content: "Contact" },
+          { url: "#", content: "Career" },
+          { url: "/ContactUs", content: "Contact" },
         ]}
       />
     </>

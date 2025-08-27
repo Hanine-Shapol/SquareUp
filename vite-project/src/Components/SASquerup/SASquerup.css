@@ -18,8 +18,7 @@
 }
 
 .squerup-title {
-  padding-top: 100px;
-  /* تأكد من القيغما */
+  padding-top: 120px;
   font-family: "Barlow", sans-serif;
   font-weight: 600;
   font-size: 48px;
@@ -44,6 +43,7 @@
   align-items: center;
   width: fit-content;
   padding: 14px 12px;
+  margin-bottom: 50px;
   border: 1px solid var(--SecondBGColor);
   background: var(--SecondBGColor);
   border-radius: 8px;
@@ -61,21 +61,62 @@
   white-space: nowrap;
 }
 
-/* --- 1440px --- */
 @media (max-width: 1440px) {
-  .squerup { max-width: 1280px; padding: 0 40px; gap: 40px; }
-  .squerup-title { font-size: 38px; }
-  .squerup-subtitle { font-size: 16px; }
-  .squerup-container { border-radius: 6px; }
-  .container-subtitle { font-size: 18px; line-height: 100%; }
+  .squerup {
+    max-width: 1280px;
+    padding: 0 40px;
+    gap: 40px;
+  }
+
+  .squerup-title {
+    font-size: 38px;
+    padding-top: 80px;
+  }
+
+  .squerup-subtitle {
+    font-size: 16px;
+  }
+
+  .squerup-container {
+    border-radius: 6px;
+    margin-bottom: 40px;
+  }
+
+  .container-subtitle {
+    font-size: 18px;
+    line-height: 100%;
+  }
 }
 
-/* --- 992px --- */
 @media (max-width: 992px) {
-  .squerup { align-items: flex-start; text-align: start; gap: 30px; }
-  .squerup-content { gap: 6px; }
-  .squerup-title { font-size: 28px; }
-  .squerup-subtitle { font-size: 14px; line-height: 140%; }
-  .squerup-container { padding: 20px 12px; min-width: 305px; }
-  .container-subtitle { font-size: 16px; text-align: center; }
+  .squerup {
+    align-items: flex-start;
+    text-align: start;
+    gap: 30px;
+  }
+
+  .squerup-content {
+    gap: 6px;
+  }
+
+  .squerup-title {
+    font-size: 28px;
+    padding-top: 40px;
+  }
+
+  .squerup-subtitle {
+    font-size: 14px;
+  }
+
+  .squerup-container {
+    padding: 20px 12px;
+    max-width:fit-content;
+    margin-bottom: 40px;
+  }
+
+  .container-subtitle {
+    font-size: 16px;
+    text-align: center;
+    text-wrap: wrap;
+  }
 }

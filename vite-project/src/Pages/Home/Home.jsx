@@ -1,19 +1,17 @@
-
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
+import { motion } from "framer-motion";
 import "./Home.css";
-
 import RDHero from "../../components/RDHero/RDHero";
 import LMServices from "../../components/LMServices/LMServices";
 import MmFAQCards from "../../Components/MmFAQCards/MmFAQCards";
 import SATrustedLogos from "../../Components/SATrustedLogos/SATrustedLogos";
-import ThankyouSec from "../../components/ThankyouSec/ThankyouSec";
+import ThankyouSec from "../../Components/ThankyouSec/ThankyouSec";
 import MmHeadOfSection from "../../Components/MmHeadOfSection/MmHeadOfSection";
 import HSH_SliderCards from "../../Components/HSH_SliderCards/HSH_SliderCards";
 
 const STORAGE_KEY = "lm_cards";
 const STORAGE_KEY_WC = "lm_why_choose";
-
 const DEFAULT_CARDS = [
   {
     image: "/assets/images/draw.svg",
@@ -64,84 +62,10 @@ const defaultWhyChoose = [
       "We value long-term relationships with our clients. We see ourselves as your digital partner, providing ongoing support, maintenance, and updates to ensure your digital products continue to thrive.",
   },
 ];
-
-const defaultCards = [
-  {
-    id: 1,
-    title: "SquareUp has been Instrumental in Transforming our Online Presence.",
-    description:
-      "Their team's expertise in web development and design resulted in a visually stunning and user-friendly e-commerce platform. Our online sales have skyrocketed, and we couldn't be happier.",
-    image: "/assets/images/John.jpg",
-    name: "John Smith",
-    job: "CEO of Chic Boutique",
-    url: "https://focal-x.com/",
-  },
-  {
-    id: 2,
-    title: "Working with SquareUp was a breeze.",
-    description:
-      "They understood our vision for a mobile app that streamlined our food delivery service. The app they delivered exceeded our expectations, and our customers love the seamless ordering experience. SquareUp is a trusted partner we highly recommend.",
-
-Hanine SH💜🪻, [26/08/2025 03:32]
-image: "/assets/images/Sarah.png",
-    name: "Sarah Johnson",
-    job: "Founder of HungryBites.",
-    url: "https://focal-x.com/",
-  },
-  {
-    id: 3,
-    title:
-      "SquareUp developed a comprehensive booking and reservation system for our event management company",
-    description:
-      "Their attention to detail and commitment to delivering a user-friendly platform was evident throughout the project. The system has streamlined our operations and enhanced our clients' event experiences.",
-    image: "/assets/images/Mark.png",
-    name: "Mark Thompson",
-    job: "CEO of EventMasters",
-    url: "https://focal-x.com/",
-  },
-  {
-    id: 4,
-    title: "ProTech Solutions turned to SquareUp to automate our workflow",
-    description:
-      "They delivered an exceptional custom software solution. The system has significantly increased our productivity and reduced manual errors. SquareUp's expertise and professionalism have made them a trusted technology partner.",
-    image: "/assets/images/Laura.png",
-    name: "Laura Adams",
-    job: "COO of ProTech Solutions.",
-    url: "https://focal-x.com/",
-  },
-  {
-    id: 5,
-    title:
-      "SquareUp designed and developed a captivating web portal for showcasing our real estate listings.",
-    description:
-      "The platform is visually appealing and easy to navigate, allowing potential buyers to find their dream homes effortlessly. SquareUp's expertise in the real estate industry is unmatched.",
-    image: "/assets/images/Michael.png",
-    name: "Michael Anderson",
-    job: "Founder of Dream Homes Realty.",
-    url: "https://focal-x.com/",
-  },
-  {
-    id: 6,
-    title:
-      "FitLife Tracker wanted a mobile app that tracked fitness activities and provided personalized workout plans.",
-    description:
-      "SquareUp's team developed an intuitive and feature-rich app that has helped our users stay motivated and achieve their fitness goals. We highly recommend SquareUp for any health and fitness app development needs.",
-    image: "/assets/images/Emily.png",
-    name: "Emily Turner",
-    job: "CEO of FitLife Tracker",
-    url: "https://focal-x.com/",
-  },
-];
-
 const Home = () => {
-  const [cards, setCards] = useState([]); // خدمات
-  const [whyChooseCards, setWhyChooseCards] = useState([]); // ليش تختارنا
-  const [testimonialCards, setTestimonialCards] = useState(() => {
-    const storedCards = localStorage.getItem("cards");
-    return storedCards ? JSON.parse(storedCards) : defaultCards;
-  });
-
-  const [faqData, setFaqData] = useState(() => {
+  const [cards, setCards] = useState([]);
+  const [whyChooseCards, setWhyChooseCards] = useState([]);
+  const [faqData] = useState(() => {
     const storedFAQ = localStorage.getItem("faqData");
     return storedFAQ
       ? JSON.parse(storedFAQ)
@@ -149,7 +73,7 @@ const Home = () => {
           {
             question: "What services does SquareUp provide",
             answer:
-              "SquareUp offers a range of services including design, engineering...",
+              "SquareUp offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more.",
           },
           {
             question: "How can SquareUp help my business?",
@@ -157,40 +81,39 @@ const Home = () => {
           },
           {
             question: "What industries does SquareUp work with?",
-            answer: "Lorem ipsum dolor sit amet...",
+            answer: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum soluta sunt repellat, adipisci aliquid placeat voluptatum accusantium minima magnam, quas dolore vero numquam eum consectetur. Magnam possimus blanditiis recusandae earum"
           },
           {
             question: "How long does it take to complete a project with SquareUp?",
-            answer: "Lorem ipsum dolor sit amet...",
+            answer: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum soluta sunt repellat, adipisci aliquid placeat voluptatum accusantium minima magnam, quas dolore vero numquam eum consectetur. Magnam possimus blanditiis recusandae earum"
           },
           {
             question:
               "Do you offer ongoing support and maintenance after the project is completed?",
-            answer: "Lorem ipsum dolor sit amet...",
+            answer: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum soluta sunt repellat, adipisci aliquid placeat voluptatum accusantium minima magnam, quas dolore vero numquam eum consectetur. Magnam possimus blanditiis recusandae earum"
           },
           {
             question: "Can you work with existing design or development frameworks?",
-            answer: "Lorem ipsum dolor sit amet...",
+            answer: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum soluta sunt repellat, adipisci aliquid placeat voluptatum accusantium minima magnam, quas dolore vero numquam eum consectetur. Magnam possimus blanditiis recusandae earum"
           },
           {
             question: "How involved will I be in the project development process?",
-            answer: "Lorem ipsum dolor sit amet...",
+            answer: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum soluta sunt repellat, adipisci aliquid placeat voluptatum accusantium minima magnam, quas dolore vero numquam eum consectetur. Magnam possimus blanditiis recusandae earum"
           },
           {
             question:
               "Can you help with website or app maintenance and updates?",
-            answer: "Lorem ipsum dolor sit amet...",
+            answer: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum soluta sunt repellat, adipisci aliquid placeat voluptatum accusantium minima magnam, quas dolore vero numquam eum consectetur. Magnam possimus blanditiis recusandae earum"
           },
         ];
   });
 
-// حفظ FAQ
+
   useEffect(() => {
     localStorage.setItem("faqData", JSON.stringify(faqData));
   }, [faqData]);
 
-  // LM Services
-  useEffect(() => {
+useEffect(() => {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) {
       try {
@@ -207,8 +130,6 @@ const Home = () => {
       setCards(seeded);
     }
   }, []);
-
-  // Why Choose
   useEffect(() => {
     const raw = localStorage.getItem(STORAGE_KEY_WC);
     if (raw) {
@@ -232,31 +153,28 @@ const Home = () => {
       setWhyChooseCards(seeded);
     }
   }, []);
-
-  // حفظ Testimonials
-  useEffect(() => {
-    localStorage.setItem("cards", JSON.stringify(testimonialCards));
-  }, [testimonialCards]);
-
   return (
-    <div className="home-container">
-      {/* Hero Section */}
-      <RDHero
-        title={"A Digital Product Studio that will Work"}
-        description={
-          <>
-            For <span> Startups </span> , <span> Enterprise leaders </span> and{" "}
-            <span> Social Good</span>
-          </>
-        }
-        btn1={{ Link: "/Work", text: "Our Works" }}
-        btn2={{ Link: "/ContactUs", text: "Contact Us" }}
-      />
-
-      <Outlet />
-
-      {/* Trusted Logos */}
-      <SATrustedLogos
+    <motion.div
+    initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+    >
+      <div className="lm_whitespacing_x">
+        <RDHero
+          title={"A Digital Product Studio that will Work"}
+          description={
+            <>
+              For <span> Startups </span> , <span> Enterprise leaders </span> and{" "}
+              <span> Social Good</span>
+            </>
+          }
+          btn1={{ Link: "/Work", text: "Our Works" }}
+          btn2={{ Link: "/ContactUs", text: "Contact Us" }}
+        />
+        <Outlet />
+      </div>
+<SATrustedLogos
         subTitle="Trusted By 250+ Companies"
         icon1Trusted="/assets/images/company-1.svg"
         icon2Trusted="/assets/images/company-2.svg"
@@ -266,64 +184,61 @@ const Home = () => {
         icon6Trusted="/assets/images/company-6.svg"
       />
 
-      {/* Services Section */}
-      <MmHeadOfSection
-        title="Our Services"
-        subtitle="Transform your brand with our innovative digital solutions that captivate and engage your audience."
-        bgImage="/assets/images/head-bg-2.png"
-      />
-      <div className="lm_whitespacing_x lm-cards-container three-columns">
-        {cards.map((card) => (
-          <LMServices
-            key={card.id}
-            image={card.image}
-            title={card.title}
-            paragraph={card.paragraph}
-            btn={card.btn}
-            showButton={true}
-            horizontal={false}
-          />
-        ))}
-      </div>
-
-      {/* Why Choose Section */}
-      <MmHeadOfSection
-        title="Why Choose SquareUp?"
-        subtitle="Experience excellence in digital craftsmanship with our team of skilled professionals dedicated to delivering exceptional results."
-        bgImage="/assets/images/head-bg-2.png"
-      />
-      <div className="lm_whitespacing_x lm-cards-container two-columns">
-        {whyChooseCards.map((item) => (
-          <LMServices
-            key={item.id}
-            image={item.image}
-            title={item.title}
-            paragraph={item.paragraph}
-            showButton={false}
-            horizontal={true}
-          />
-        ))}
-      </div>
-
-      {/* Testimonials */}
-      <MmHeadOfSection
-        title="What our Clients say About us"
-        subtitle="At SquareUp, we take pride in delivering exceptional digital products and services that drive success for our clients. Here's what some of our satisfied clients have to say about their experience working with us"
-        bgImage="/assets/images/head-bg-2.png"
-      />
       <div className="lm_whitespacing_x">
-        <HSH_SliderCards cards={testimonialCards} />
-        <MmFAQCards cards={testimonialCards} />
-      </div>
-{/* FAQ Section */}
-      <MmHeadOfSection
-        title="Frequently Asked Questions"
-        subtitle="Still you have any questions? Contact our Team via hello@squareup.com"
-        bgImage="/assets/images/head-bg-4.png"
-      />
-      <MmFAQCards faqData={faqData} />
+        <MmHeadOfSection
+          title="Our Services"
+          subtitle="Transform your brand with our innovative digital solutions that captivate and engage your audience."
+          bgImage="/assets/images/head-bg-1.jpg"
+        />
+        <div className="lm-cards-container three-columns">
+          {cards.map((card) => (
+            <LMServices
+              key={card.id}
+              image={card.image}
+              title={card.title}
+              paragraph={card.paragraph}
+              btn={card.btn}
+              showButton={true}
+              horizontal={false}
+            />
+          ))}
+        </div>
 
-      {/* Thank You Section */}
+        <MmHeadOfSection
+          title="Why Choose SquareUp?"
+          subtitle="Experience excellence in digital craftsmanship with our team of skilled professionals dedicated to delivering exceptional results."
+          bgImage="/assets/images/head-bg-2.png"
+        />
+        <div className="lm-cards-container two-columns">
+          {whyChooseCards.map((item) => (
+            <LMServices
+              key={item.id}
+              image={item.image}
+              title={item.title}
+              paragraph={item.paragraph}
+              showButton={false}
+              horizontal={true}
+            />
+          ))}
+        </div>
+
+        <MmHeadOfSection
+          title="What our Clients say About us"
+          subtitle="At SquareUp, we take pride in delivering exceptional digital products and services that drive success for our clients.Here's what some of our satisfied clients have to say about thier experience working with us"
+          bgImage="/assets/images/head-bg-2.png"
+        />
+
+        <HSH_SliderCards />
+
+        <MmHeadOfSection
+          title="Frequently Asked Questions"
+          subtitle="Still you have any questions? Contact our Team via hello@squareup.com"
+          bgImage="/assets/images/head-bg-4.png"
+        />
+
+        <MmFAQCards faqData={faqData} />
+      </div>
+
       <ThankyouSec
         bgImage="/assets/images/head-bg-3.png"
         image="/assets/images/Logo-colorfull.svg"
@@ -332,7 +247,7 @@ const Home = () => {
         buttonText="Start Project"
         linkTo="/contact"
       />
-    </div>
+    </motion.div>
   );
 };
 

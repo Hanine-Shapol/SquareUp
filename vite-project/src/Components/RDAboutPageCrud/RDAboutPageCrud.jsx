@@ -1,54 +1,44 @@
-import './RDAboutPageCrud.css'
-import { useEffect, useState } from "react"
+import { useState } from "react";
+import "./RDAboutPageCrud.css";
 
-const RDAboutPageCrud = () => {
-    const [cards, setCards] = useState([])
-    const [form, setForm] = useState({ id: null, number: "", title: "", description: "" })
-    const [isEdit, setIsEdit] = useState(false)
-
-    useEffect(() => {
-        const storedCards = JSON.parse(localStorage.getItem("cardsAbout")) || []
-        setCards(storedCards);
-    }, [])
+const RDAboutPageCrud = ({ cards = [], setCards }) => {
+    const [form, setForm] = useState({ id: null, number: "", title: "", description: "" });
+    const [isEdit, setIsEdit] = useState(false);
 
     const handleChange = (e) => {
-        const { name, value } = e.target
-        setForm({ ...form, [name]: value })
-    }
+        const { name, value } = e.target;
+        setForm({ ...form, [name]: value });
+    };
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        if (!form.number || !form.title || !form.description) return
+        e.preventDefault();
+        if (!form.number || !form.title || !form.description) return;
 
-        let updatedCards
+        let updatedCards;
         if (isEdit) {
-            updatedCards = cards.map(c => (c.id === form.id ? form : c))
-            setIsEdit(false)
+            updatedCards = cards.map((c) => (c.id === form.id ? form : c));
+            setIsEdit(false);
         } else {
-            updatedCards = [...cards, { ...form, id: Date.now() }]
+            updatedCards = [...cards, { ...form, id: Date.now() }];
         }
 
-        setCards(updatedCards)
-        localStorage.setItem("cardsAbout", JSON.stringify(updatedCards))
-        setForm({ id: null, number: "", title: "", description: "" })
-    }
+        setCards(updatedCards);
+        setForm({ id: null, number: "", title: "", description: "" });
+    };
 
     const handleEdit = (card) => {
-        setForm(card)
-        setIsEdit(true)
-    }
+        setForm(card);
+        setIsEdit(true);
+    };
 
     const handleDelete = (id) => {
-        const updatedCards = cards.filter(c => c.id !== id)
-        setCards(updatedCards)
-        localStorage.setItem("cardsAbout", JSON.stringify(updatedCards))
-
-    
-    }
+        const updatedCards = cards.filter((c) => c.id !== id);
+        setCards(updatedCards);
+    };
 
     return (
-        <div className='lm_whitespacing_x'>
-            <form className='RD_Form' onSubmit={handleSubmit}>
+        <div className="lm_whitespacing_x">
+            <form className="RD_Form" onSubmit={handleSubmit}>
                 <input
                     placeholder="Number"
                     name="number"
@@ -67,12 +57,12 @@ const RDAboutPageCrud = () => {
                     value={form.description}
                     onChange={handleChange}
                 />
-                <button type="submit" className='RD_Btn'>
+                <button type="submit" className="RD_Btn">
                     {isEdit ? "Save" : "Add"}
                 </button>
             </form>
 
-            <table className='RD_Table'>
+            <table className="RD_Table">
                 <thead>
                     <tr>
                         <th>Number</th>
@@ -83,26 +73,35 @@ const RDAboutPageCrud = () => {
                 </thead>
                 <tbody>
                     {cards.length > 0 ? (
-                        cards.map(card => (
+                        cards.map((card) => (
                             <tr key={card.id}>
                                 <td>{card.number}</td>
                                 <td>{card.title}</td>
                                 <td>{card.description}</td>
                                 <td>
-                                    <button onClick={() => handleEdit(card)} className='RD_Btn'>Edit</button>
-                                    <button onClick={() => handleDelete(card.id)} className='RD_RedBtn'>Delete</button>
+                                    <button onClick={() => handleEdit(card)} className="RD_Btn">
+                                        Edit
+                                    </button>
+                                    <button
+                                        onClick={() => handleDelete(card.id)}
+                                        className="RD_RedBtn"
+                                    >
+                                        Delete
+                                    </button>
                                 </td>
                             </tr>
                         ))
                     ) : (
                         <tr>
-                            <td colSpan={4} style={{ textAlign: "center" }}>There is no Data</td>
+                            <td colSpan={4} style={{ textAlign: "center" }}>
+                                There is no Data
+                            </td>
                         </tr>
                     )}
                 </tbody>
             </table>
         </div>
-    )
-}
-export default RDAboutPageCrud
+    );
+};
 
+export default RDAboutPageCrud;

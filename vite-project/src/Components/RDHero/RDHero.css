@@ -1,7 +1,7 @@
 .RDHero{
     position: relative;
     height: 100vh;
-    padding-top: 212px;
+    padding-top: 150px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -11,7 +11,6 @@
     background-position: top,  bottom center;
     background-size: auto ,auto;
     object-fit: cover;
-    /* background-clip: content-box; */
     background-color: var(--HeroBGColor);
     border: 1px solid var(--BorderColor);
     .RDtitle{
@@ -33,7 +32,6 @@
         border: 1px solid var(--BorderColor);
         box-shadow: 0 4px 4px var(--ShadowColor);
         color: var(--SecondPColor);
-
         span{
             padding: 12px 14px;
             font-family: 'Barlow';

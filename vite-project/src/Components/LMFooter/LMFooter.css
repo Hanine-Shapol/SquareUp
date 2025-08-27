@@ -42,9 +42,9 @@ footer{
                 height: 64px;
                 margin-right: 14px;
                 padding: 20px;
-                background: var(--ColorIcons);
                 border-radius: 8px;
-                border: 1px solid var(--ColorFooterIcon);
+                background: linear-gradient(to bottom , var(--ColorIcons) 0% , transparent 100% ) ;
+                border: 1px solid linear-gradient( to bottom , var(--ColorFooterIcon) 0% , transparent 100%);
             }
 
             .lm_socialIcon{
@@ -160,7 +160,6 @@ footer{
         }
     }
 }
-
 
 @media screen and (max-width : 992px) {
     footer{

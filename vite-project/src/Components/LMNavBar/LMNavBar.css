@@ -13,9 +13,10 @@ nav{
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--SecondBGColor);
-    position: fixed;
+    position: sticky;
+    top: 0;
     background-color: var(--MainBGColor);
-    z-index: 6;
+    z-index: 100;
 
     .navItems{
         width: 346px;
@@ -124,7 +125,7 @@ nav{
         padding: 106px 20px 20px;
         transform: translateX(-100%);
         transition: 0.4s ease-in-out;
-        z-index: 5;
+        z-index: 99;
         background-color: var(--MainBGColor);
         display: flex;
         flex-direction: column;
