@@ -7,8 +7,6 @@ const MmHeadOfSection = ({ title, subtitle, bgImage }) => {
             className="head-of-section"
             style={{ "--bg-image": `url(${bgImage})` }}
         >
-            <div className="squr-image"></div>
-            <div className="filtter"></div>
             <div className="content">
                 <motion.h2
                     initial={{ opacity: 0, y: 30 }}
