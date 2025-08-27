@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion"; // ✅ استدعاء Framer Motion
-import ThankyouSec from "../../components/ThankyouSec/ThankyouSec";
+import { motion } from "framer-motion";
+import ThankyouSec from "../../Components/ThankyouSec/ThankyouSec";
 import SASquerup from "../../components/SASquerup/SASquerup";
 import RDShowBtn from "../../components/RDShowBtn/RDShowBtn";
 import MmHeadOfSection from "../../Components/MmHeadOfSection/MmHeadOfSection";

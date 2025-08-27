@@ -152,9 +152,9 @@
 }
 
 .HSH_Dots {
-    margin-top: 20px;
+    margin: 24px 0;
     display: flex;
-    gap: 10px;
+    gap: 24px;
     justify-content: center;
     align-items: center;
 }

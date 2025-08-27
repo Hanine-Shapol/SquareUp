@@ -35,7 +35,6 @@ const DEFAULT_CARDS = [
     btn: "learn more",
   },
 ];
-
 const defaultWhyChoose = [
   {
     image: "/assets/images/distinction.svg",
