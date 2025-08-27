@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-
 import MmContactUsForm from "../../Components/MmContactUsForm/MmContactUsForm";
 import MmFAQCards from "../../Components/MmFAQCards/MmFAQCards";
 import MmHeadOfSection from "../../Components/MmHeadOfSection/MmHeadOfSection";
 import SaTodaySquareUp from "../../components/SaTodaySquareUp/SaTodaySquareUp";
+import { motion } from "framer-motion"; // ✅ استدعاء Framer Motion
 
 const ContactUS = () => {
   const [faqData, setFaqData] = useState(() => {
@@ -49,13 +49,17 @@ const ContactUS = () => {
         ];
   });
 
-  // حفظ FAQ في localStorage
   useEffect(() => {
     localStorage.setItem("faqData", JSON.stringify(faqData));
   }, [faqData]);
 
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -30 }}
+      transition={{ duration: 0.6, ease: "easeInOut" }} 
+    >
       <div className="lm_whitespacing_x">
         <MmHeadOfSection
           title="Contact Us"
@@ -73,15 +77,6 @@ const ContactUS = () => {
           bgImage="/assets/images/head-bg-4.png"
         />
         <MmFAQCards faqData={faqData} />
-        <MmHeadOfSection
-          title="Contact Us"
-          subtitle="Get in touch with us today and let us help you with any questions or inquiries you may have."
-          bgImage="/assets/images/head-bg-4.png"
-        />
-      </div>
-
-      <div>
-        <MmContactUsForm />
       </div>
 
       <div className="lm_whitespacing_x">
@@ -95,7 +90,7 @@ const ContactUS = () => {
           buttonText="Start Project"
         />
       </div>
-    </>
+    </motion.div>
   );
 };
 

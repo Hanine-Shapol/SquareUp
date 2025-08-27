@@ -1,5 +1,5 @@
 import './RDShowBtn.css'
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import RDCard from '../RDCard/RDCard'
 
 const RDShowBtn = ({ initialCount = 4, Cards = [] }) => {

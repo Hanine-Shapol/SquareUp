@@ -1,13 +1,17 @@
-import { Outlet } from "react-router-dom";
-
 import SASquerup from "../../components/SASquerup/SASquerup";
 import ThankyouSec from "../../components/ThankyouSec/ThankyouSec";
 import MmHeadOfSection from "../../Components/MmHeadOfSection/MmHeadOfSection";
 import MmWorkList from "../../Components/MmWorkList/MmWorkList";
+import { motion } from "framer-motion";
 
 const Work = () => {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+    >
       <div className="lm_whitespacing_x">
         <MmHeadOfSection
           title="Our Works"
@@ -32,9 +36,7 @@ const Work = () => {
         buttonText="Start Project"
         linkTo="/contact"
       />
-
-      <Outlet />
-    </>
+    </motion.div>
   );
 };
 

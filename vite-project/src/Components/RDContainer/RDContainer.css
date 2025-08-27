@@ -1,6 +1,5 @@
 .RD_Container{
     width: 100%;
-    background-color: var(--SecondBGColor);
     display: grid;
     grid-template-columns: repeat(2,1fr);
     margin: 0 auto;
@@ -14,9 +13,7 @@
 
 
 @media screen and (max-width: 1440px){
-    .RD_Container{
-    
-    }
+
 }
 
 @media screen and (max-width: 992px){

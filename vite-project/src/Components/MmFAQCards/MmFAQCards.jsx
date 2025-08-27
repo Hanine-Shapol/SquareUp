@@ -1,4 +1,6 @@
+// src/Components/MmFAQCards/MmFAQCards.jsx
 import { useState } from "react";
+import { motion } from "framer-motion";
 import "./MmFAQCards.css";
 
 const MmFAQCards = ({ faqData }) => {
@@ -8,7 +10,7 @@ const MmFAQCards = ({ faqData }) => {
         setActiveIndex(activeIndex === index ? null : index);
     };
 
-    // نقسم الأسئلة على عمودين
+
     const leftColumn = faqData.filter((_, i) => i % 2 === 0);
     const rightColumn = faqData.filter((_, i) => i % 2 !== 0);
 
@@ -16,7 +18,14 @@ const MmFAQCards = ({ faqData }) => {
         items.map((item, index) => {
             const realIndex = index * 2 + colOffset;
             return (
-                <div className="card" key={realIndex}>
+                <motion.div
+                    className="card"
+                    key={realIndex}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.2 }}
+                >
                     <div
                         className="question-container"
                         onClick={() => toggleAnswer(realIndex)}
@@ -34,10 +43,11 @@ const MmFAQCards = ({ faqData }) => {
                             alt="toggle"
                         />
                     </div>
+
                     <p className={activeIndex === realIndex ? "answer open" : "answer"}>
                         {item.answer}
                     </p>
-                </div>
+                </motion.div>
             );
         });
 

@@ -8,8 +8,7 @@
   border-style: solid;
   border-color: var(--SecondBGColor);
   background-color: var(--MainBGColor);
-
-  width: 100%;         /* ياخد كامل عرض الشاشة */
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -17,6 +16,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 24px;
   border: 1px solid var(--SecondBGColor);
   border-radius: 100px;
   padding: 20px 34px;
@@ -25,20 +25,20 @@
 }
 
 .trusted-header-text {
-  color: #FDFFFA;
+  color: var(--LabelLightColor);
   min-width: 218px;
-  font-family: Barlow, sans-serif;
+  font-family: "Barlow", sans-serif;
   font-weight: 500;
   font-size: 18px;
 }
 
 .TrustedLogos-content {
   width: 100%;
-  display: grid;                            /* Grid بدل Flex */
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   justify-items: center;
   align-items: center;
-  gap: 20px;                                /* مسافة بين اللوغوهات */
+  gap: 20px;
   padding: 20px 40px;
   background: transparent !important;
   box-sizing: border-box;
@@ -57,13 +57,11 @@
   opacity: 1;
 }
 
-
 @media screen and (max-width: 992px) {
   .trustedlogo {
     width: 100%;
     border: 1px solid var(--SecondBGColor);
     padding: 16px;
-    margin: 4px;
   }
 
   .trusted-header {
@@ -78,7 +76,7 @@
   }
 
   .TrustedLogos-content {
-    grid-template-columns: 1fr 1fr;   /* كل سطر فيه لوغوين */
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
     padding: 8px;
   }
@@ -86,21 +84,5 @@
   .TrustedLogos-content img {
     height: 24px;
     max-width: 120px;
-  }
-
-  .trusted-icon1,
-  .trusted-icon2,
-  .trusted-icon3,
-  .trusted-icon4,
-  .trusted-icon5,
-  .trusted-icon6 {
-    border: 1px solid var(--SecondBGColor);
-    padding: 16px 20px;
-    width: 100%;
-    max-width: 140px;
-    min-height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 }

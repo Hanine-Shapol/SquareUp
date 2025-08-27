@@ -51,7 +51,7 @@ const MmWorkForm = ({ items, setItems, editItem, setEditItem }) => {
             const newItems = [...items, newItem];
             setItems(newItems);
             localStorage.setItem("items", JSON.stringify(newItems));
-            navigate("/Work_page");
+            navigate("/Work");
         }
 
         setTitle("");

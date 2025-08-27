@@ -208,7 +208,7 @@
 
         /* نفس الكرت */
         .lm-card {
-            max-width: 358px;
+            max-width: 100%;
             min-height: min-content;
             padding: 30px;
 
@@ -235,7 +235,7 @@
 
         /* نفس الكرت */
         .lm-card {
-            max-width: 358px;
+            max-width: 100%;
             min-height: min-content;
             padding: 40px 30px;
         }

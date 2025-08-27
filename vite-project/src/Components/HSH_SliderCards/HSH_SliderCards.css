@@ -28,7 +28,7 @@
     border: none;
     font-size: 32px;
     cursor: pointer;
-    z-index: 5; /* فوق الكروت */
+    z-index: 5; 
     font-family: "Barlow", sans-serif;
     color: var(--MainFontColor);
     position: absolute;
@@ -37,11 +37,11 @@
 }
 
 .HSH_NavButton.left {
-    left: 10px; /* فوق الكرت على اليسار */
+    left: 10px;
 }
 
 .HSH_NavButton.right {
-    right: 10px; /* فوق الكرت على اليمين */
+    right: 10px;
 }
 
 .HSH_Slide {
@@ -63,7 +63,6 @@
 }
 
 .HSH_Card {
-    /* height: 532px; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -117,14 +116,14 @@
 .HSH_Info h3 {
     font-weight: 500;
     color: var(--MainFontColor);
-    font-size: 16px;
+    font-size: 20px;
     line-height: 150%;
 }
 
 .HSH_Info p {
     font-weight: 400;
     color: var(--SecondFontColor);
-    font-size: 14px;
+    font-size: 18px;
     line-height: 150%;
 }
 
@@ -136,8 +135,6 @@
     align-items: center;
     text-decoration: none;
     color: var(--MainFontColor);
-    width: 149px;
-    height: 63px;
     gap: 10px;
     opacity: 1;
     border-radius: 8px;
@@ -145,7 +142,7 @@
     padding: 18px 20px;
     font-weight: 500;
     background-color: var(--SecondBGColor);
-    font-size: 14px;
+    font-size: 18px;
     margin-left: auto;
     cursor: pointer;
 }
@@ -173,21 +170,49 @@
 .HSH_Dots .HSH_Dot.active {
     background: var(--CardTitleGreenColor);
 }
-
-/* الشاشات */
-@media screen and (max-width: 1440px) {
-    .HSH_CardsContainer {
-        padding-left: 40px;
-        padding-right: 40px;
+@media screen and (max-width: 1440px){
+    .HSH_Card h2 {
+    color: var(--CardTitleGreenColor);
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 20px;
+    text-align: left;
+    width: 100%;
+}
+.HSH_Card>p {
+    color: var(--SecondFontColor);
+    font-size: 16px;
+    padding-bottom: 20px;
+    text-align: left;
+    width: 100%;
+}
+    .HSH_ClientImg {
+        width: 50px;
+        height: 50px;
     }
+.HSH_Info h3 {
+    color: var(--MainFontColor);
+    font-size: 16px;
+    line-height: 150%;
 }
 
+.HSH_Info p {
+    color: var(--SecondFontColor);
+    font-size: 14px;
+    line-height: 150%;
+}
+
+.HSH_Button,
+.HSH_Button:link,
+.HSH_Button:visited {
+    border-radius: 6px;
+    padding: 14px 16px;
+    font-size: 14px;
+}
+
+}
 @media screen and (max-width: 992px) {
     .HSH_CardsContainer {
-        flex-direction: column;
-        padding-left: 20px;
-        padding-right: 20px;
-        align-items: center;
         gap: 20px;
     }
 
@@ -200,8 +225,8 @@
     }
 
     .HSH_ClientImg {
-        width: 56px;
-        height: 56px;
+        width: 40px;
+        height: 40px;
     }
 
     .HSH_NavButton.left {

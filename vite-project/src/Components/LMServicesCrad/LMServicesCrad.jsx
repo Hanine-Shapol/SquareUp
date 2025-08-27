@@ -1,3 +1,4 @@
+
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LMServicesCrad.css";
@@ -48,7 +49,7 @@ const LMServicesCrad = () => {
         persist(updated);
         } 
         else {
-        const newRow = { ...form, id: Date.now(), btn: form.btn || "learn more" };
+        const newRow = { ...form, id: Date.now(), btn: "learn more" };
         persist([...rows, newRow]);
         }
 
@@ -134,8 +135,7 @@ const LMServicesCrad = () => {
             )}
             </div>
         </form>
-
-        {/* الجدول */}
+{/* الجدول */}
         <div className="lm-table-wrap">
             <table className="lm-table">
             <thead>

@@ -3,6 +3,7 @@
     max-width: 798px;
     border: 1px solid var(--SecondPColor);
     padding: 100px 50px;
+    background-color: var(--MainBGColor);
 
     .RD_CardHeader{
         display: flex;
@@ -34,16 +35,12 @@
         }
     }
     
-
     @media screen and (max-width: 1440px){
         .RD_Card{
             width: 100%;
             max-width: 640px;
             padding: 80px 40px;
             margin: 0 auto;
-
-
-
             .RD_CardHeader{
                 
                 .RD_number{
@@ -52,7 +49,6 @@
                 .RD_title{
                     font-size: 24px;
                     padding-bottom: 20px;
-
                 }
             }
             .RD_description{

@@ -4,18 +4,19 @@
   overflow: hidden;
 }
 
+/* الخلفية: الـ Square-effect + الصورة من الـ props */
 .thankyou-images::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image:
-    url("/assets/images/Square-effect.png"),
+  background-image: 
+    url("/assets/images/Square-effect.png"), 
     var(--bg-image);
   background-repeat: repeat, no-repeat;
   background-size: 50px 50px, cover;
   background-position: top left, center;
   filter: saturate(0) brightness(0.3);
-  z-index: -1;
+  z-index: 0; /* خلفية ورا المحتوى */
 }
 
 .thankyou-images::after {
@@ -23,19 +24,20 @@
   position: absolute;
   inset: 0;
   background-color: rgba(172, 255, 36, 0.06);
-  z-index: -1;
+  z-index: 0;
 }
 
+/* المحتوى بالمنتصف */
 .thankyou-content {
-  position: absolute;
+  position: absolute;   /* ✅ يغطي كامل الحاوية */
   inset: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* ✅ يوسطن عمودي */
+  align-items: center;     /* ✅ يوسطن أفقي */
   row-gap: 20px;
   text-align: center;
-  z-index: 1;
+  z-index: 1; /* فوق الخلفية */
 }
 
 .thankyou-content h2 {
@@ -103,6 +105,7 @@
   background: var(--IDentity_color);
 }
 
+/* شاشات متوسطة */
 @media (max-width: 1440px) {
   .thankyou-images {
     width: 100%;
@@ -136,6 +139,7 @@
   }
 }
 
+/* شاشات صغيرة */
 @media (max-width: 992px) {
   .thankyou-images {
     width: 100%;
