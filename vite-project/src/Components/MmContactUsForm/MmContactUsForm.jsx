@@ -53,9 +53,9 @@ const MmContactUsForm = ({ editingItem, onSave }) => {
     };
 
     const socialIcons = [
-        { name: "Facebook", url: "https://www.facebook.com/focal.x.agency/", icon: "/assets/images/facebook.svg" },
-        { name: "Twitter", url: "https://twitter.com/focal_x_agency?t=4jk3EdcOYPA9mvvWFnjuww&s=09", icon: "/assets/images/twitter.svg" },
-        { name: "LinkedIn", url: "https://www.linkedin.com/company/focal-x-agency/", icon: "/assets/images/linkedin.svg" },
+        { name: "Facebook", url: "https://www.facebook.com/focal.x.agency/", icon: "/SquareUp/assets/images/facebook.svg" },
+        { name: "Twitter", url: "https://twitter.com/focal_x_agency?t=4jk3EdcOYPA9mvvWFnjuww&s=09", icon: "/SquareUp/assets/images/twitter.svg" },
+        { name: "LinkedIn", url: "https://www.linkedin.com/company/focal-x-agency/", icon: "/SquareUp/assets/images/linkedin.svg" },
     ];
 
     const openSocialLink = (link) => {

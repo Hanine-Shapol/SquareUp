@@ -46,7 +46,7 @@ const LMNavBar = ({ image, items, btn }) => {
                 </div>
 
                 <button className="bars" onClick={showHandel}>
-                    <img src="/assets/images/bars.svg" alt="bars" className='icon' />
+                    <img src="/SquareUp/assets/images/bars.svg" alt="bars" className='icon' />
                 </button>
             </motion.nav>
 
