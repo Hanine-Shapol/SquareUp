@@ -37,8 +37,8 @@ const MmFAQCards = ({ faqData }) => {
                         <img
                             src={
                                 activeIndex === realIndex
-                                    ? "/assets/images/asterisk.svg"
-                                    : "/assets/images/plus.svg"
+                                    ? "/SquareUp/assets/images/asterisk.svg"
+                                    : "/SquareUp/assets/images/plus.svg"
                             }
                             alt="toggle"
                         />

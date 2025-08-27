@@ -17,7 +17,7 @@ const MmWorkCard = ({ title, image, webName, urlWeb, description }) => {
             <div>
                 <a href={urlWeb} target="_blank" rel="noopener noreferrer">{urlWeb}</a>
                 <a href={urlWeb} className='slanted-arrow' target="_blank">
-                    <img src="/assets/images/Slanted-arrow.svg" alt="" />
+                    <img src="/SquareUp/assets/images/Slanted-arrow.svg" alt="" />
                 </a>
             </div>
             <p>{description}</p>

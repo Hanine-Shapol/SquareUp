@@ -5,9 +5,9 @@ import './LMFooter.css';
 
 const LMFooter = ({ image, items }) => {
     const socialIcons = [
-        { name: "Facebook", url: "https://www.facebook.com/focal.x.agency/", icon: "/assets/images/facebook.svg" },
-        { name: "Twitter", url: "https://twitter.com/focal_x_agency?t=4jk3EdcOYPA9mvvWFnjuww&s=09", icon: "/assets/images/twitter.svg" },
-        { name: "LinkedIn", url: "https://www.linkedin.com/company/focal-x-agency/", icon: "/assets/images/linkedin.svg" },
+        { name: "Facebook", url: "https://www.facebook.com/focal.x.agency/", icon: "/SquareUp/assets/images/facebook.svg" },
+        { name: "Twitter", url: "https://twitter.com/focal_x_agency?t=4jk3EdcOYPA9mvvWFnjuww&s=09", icon: "/SquareUp/assets/images/twitter.svg" },
+        { name: "LinkedIn", url: "https://www.linkedin.com/company/focal-x-agency/", icon: "/SquareUp/assets/images/linkedin.svg" },
     ];
 
     const openSocialLink = (link) => {
@@ -87,17 +87,17 @@ viewport={{ once: false, amount: 0.2 }}
                 >
                     <div className='lm_contactIcons'>
                         <div className='lm-contactIcon'>
-                            <img src="/assets/images/email.svg" alt="icon" />
+                            <img src="/SquareUp/assets/images/email.svg" alt="icon" />
                             <span className='lm_font_size_weight2'>hello@squareup.com</span>
                         </div>
                         <div className='lm-line'></div>
                         <div className='lm-contactIcon'>
-                            <img src="/assets/images/phone.svg" alt="icon" />
+                            <img src="/SquareUp/assets/images/phone.svg" alt="icon" />
                             <span className='lm_font_size_weight2'>+91 91813 23 2309</span>
                         </div>
                         <div className='lm-line'></div>
                         <div className='lm-contactIcon'>
-                            <img src="/assets/images/location.svg" alt="icon" />
+                            <img src="/SquareUp/assets/images/location.svg" alt="icon" />
                             <span className='lm_font_size_weight2'>Somewhere in the World</span>
                         </div>
                         <div className='lm-line'></div>
