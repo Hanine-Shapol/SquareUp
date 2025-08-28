@@ -13,7 +13,7 @@ const RDShowBtn = ({ initialCount = 4, Cards = [] }) => {
 
     return (
         <div>
-            <div className='RD_Container lm_whitespacing_x'>
+            <div className='RD_Container'>
                 {visibleCards.map((Card, index) => (
                     <RDCard 
                         key={index} 

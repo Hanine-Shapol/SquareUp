@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import {Routes, Route } from 'react-router-dom'
 import './App.css'
 import Home from './Pages/Home/Home'
 import ContactUS from './Pages/ContactUS/ContactUS'
@@ -8,10 +8,12 @@ import Work from './Pages/Work/Work'
 import AboutUS from './Pages/AboutUs/AboutUS'
 import LMNavBar from './Components/LMNavBar/LMNavBar'
 import LMFooter from './Components/LMFooter/LMFooter'
-
+import LMScrollToTop from './Components/LMScrollToTop/LMScrollToTop'
 function App() {
   return (
     <>
+      <LMScrollToTop />
+
       <LMNavBar
         image="/assets/images/Logo-full.svg"
         items={[
@@ -22,6 +24,12 @@ function App() {
           { url: "/DashBoard", content: "DashBoard" },
         ]}
         btn="Contact Us"
+        itemsList={[
+          { url: "/", content: "Home" },
+          { url: "/Work", content: "Work" },
+          { url: "/Process", content: "Process" },
+          { url: "/AboutUS", content: "About" },
+        ]}
       />
 
       <Routes>
