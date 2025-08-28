@@ -78,18 +78,18 @@ const About = () => {
             <MmHeadOfSection
                 title="About Us"
                 subtitle="Welcome to SquareUp, where collaboration, expertise, and client-centricity intersect to shape the future of digital innovation."
-                bgImage="/SquareUp/assets/images/head-bg-1.jpg"
+                bgImage="/assets/images/head-bg-1.jpg"
             />
 
             <SaAboutSquareUp
                 title="About SquareUp"
                 subtitle="SquareUp is a digital product agency that is passionate about crafting exceptional digital experiences. We specialize in design, engineering, and project management, helping businesses thrive in the digital landscape. At SquareUp, we follow a structured and collaborative process to ensure the successful delivery of exceptional digital products. Our process combines industry best practices, creative thinking, and a client-centric approach."
-                bgImage="/SquareUp/assets/images/head-bg-5-bw.png"
-                icone="/SquareUp/assets/images/Logo-colorfull.svg"
-                line1="/SquareUp/assets/images/line-left.svg"
-                line2="/SquareUp/assets/images/line-right.svg"
-                line3="/SquareUp/assets/images/line-up.svg"
-                line4="/SquareUp/assets/images/Line-down.svg"
+                bgImage="/assets/images/head-bg-5-bw.png"
+                icone="/assets/images/Logo-colorfull.svg"
+                line1="/assets/images/line-left.svg"
+                line2="/assets/images/line-right.svg"
+                line3="/assets/images/line-up.svg"
+                line4="/assets/images/Line-down.svg"
             />
 
             <div>
@@ -101,7 +101,7 @@ const About = () => {
             <Outlet />
 
             <SaTodaySquareUp
-                icon="/SquareUp/assets/images/Logo.svg"
+                icon="/assets/images/Logo.svg"
                 title="Today, SquareUp Continues to Thrive as a Leading Digital Product Agency....."
                 subtitle="Combining the power of design, engineering, and project management to create transformative digital experiences. They invite you to join them on their journey and discover how they can help bring your digital ideas to life."
                 subtitleCta="Welcome to SquareUp"

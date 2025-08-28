@@ -25,7 +25,7 @@ const Process = () => {
         <MmHeadOfSection
           title="Process of Starting the Project"
           subtitle="At SquareUp, we value transparency, collaboration, and delivering exceptional results."
-          bgImage="/SquareUp/assets/images/head-bg-6.png"
+          bgImage="/assets/images/head-bg-6.png"
         />
       </div>
 
@@ -40,8 +40,8 @@ const Process = () => {
       </div>
 
       <ThankyouSec
-        bgImage="/SquareUp/assets/images/head-bg-3.png"
-        image="/SquareUp/assets/images/Logo-colorfull.svg"
+        bgImage="/assets/images/head-bg-3.png"
+        image="/assets/images/Logo-colorfull.svg"
         title="Thank you for your Interest in SquareUp."
         subtitle="We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us."
         buttonText="Start Project"

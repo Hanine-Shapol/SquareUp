@@ -25,7 +25,7 @@ const SaAboutSquareUp = ({ title, subtitle, bgImage, icone }) => {
       </motion.div>
       <motion.div
         className="about-image"
-        style={{ "--bg-image": `url(${ bgImage || "/SquareUp/assets/images/head-bg-5.png"})` }}
+        style={{ "--bg-image": `url(${ bgImage || "/assets/images/head-bg-5.png"})` }}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, amount: 0.3 }}
