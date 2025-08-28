@@ -1,12 +1,12 @@
 .SaAboutSquareUp {
   padding-top: 150px;
   padding-bottom: 150px;
-  background-color: var(--SecondBGColor);
+  background-color: var(--MainBGColor);
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 100px;
-  border: 1px solid #262626;
+  border: 1px solid var(--SecondBGColor);
 
   .about-text {
     width: 598px;

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
-const LMNavBar = ({ image, items, btn }) => {
+const LMNavBar = ({ image, items, btn , itemsList}) => {
     const [show, setShow] = useState(false);
     const showHandel = () => {
         setShow(!show);
@@ -61,15 +61,15 @@ const LMNavBar = ({ image, items, btn }) => {
                         transition={{ duration: 0.3 }}
                     >
                         <ul className="navItems">
-                            {items.map((item, index) => {
+                            {itemsList.map((element, index) => {
                                 return (
                                     <li key={index}>
                                         <NavLink
-                                            to={item?.url}
+                                            to={element?.url}
                                             className="lm_font_size_weight1"
                                             onClick={() => setShow(false)}
                                         >
-                                            {item?.content}
+                                            {element?.content}
                                         </NavLink>
                                     </li>
                                 )
