@@ -14,21 +14,21 @@ const STORAGE_KEY = "lm_cards";
 const STORAGE_KEY_WC = "lm_why_choose";
 const DEFAULT_CARDS = [
   {
-    image: "/SquareUp/assets/images/draw.svg",
+    image: "/assets/images/draw.svg",
     title: "Design",
     paragraph:
       "At Squareup, our design team is passionate about creating stunning, user-centric designs that captivate your audience and elevate your brand. We believe that great design is not just about aesthetics; it's about creating seamless and intuitive user experiences.",
     btn: "learn more",
   },
   {
-    image: "/SquareUp/assets/images/buzzel.svg",
+    image: "/assets/images/buzzel.svg",
     title: "Engineering",
     paragraph:
       "Our engineering team combines technical expertise with a passion for innovation to build robust and scalable digital solutions. We leverage the latest technologies and best practices to deliver high-performance applications tailored to your specific needs.",
     btn: "learn more",
   },
   {
-    image: "/SquareUp/assets/images/battery.svg",
+    image: "/assets/images/battery.svg",
     title: "Project Management",
     paragraph:
       "Our experienced project management team ensures that your projects are delivered on time, within budget, and according to your specifications. We follow industry-standard methodologies and employ effective communication and collaboration tools to keep you informed throughout the development process.",
@@ -37,25 +37,25 @@ const DEFAULT_CARDS = [
 ];
 const defaultWhyChoose = [
   {
-    image: "/SquareUp/assets/images/distinction.svg",
+    image: "/assets/images/distinction.svg",
     title: "Expertise",
     paragraph:
       "Our team consists of highly skilled professionals who have a deep understanding of the digital landscape. We stay updated with the latest industry trends and best practices to deliver cutting-edge solutions.",
   },
   {
-    image: "/SquareUp/assets/images/call.svg",
+    image: "/assets/images/call.svg",
     title: "Client-Centric Approach",
     paragraph:
       "We prioritize our clients and their unique needs. We listen to your ideas, challenges, and goals, and tailor our services to meet your specific requirements. Your success is our success.",
   },
   {
-    image: "/SquareUp/assets/images/protected-power.svg",
+    image: "/assets/images/protected-power.svg",
     title: "Results-Driven Solutions",
     paragraph:
       "Our primary focus is on delivering results. We combine creativity and technical expertise to create digital products that drive business growth, enhance user experiences, and provide a competitive advantage.",
   },
   {
-    image: "/SquareUp/assets/images/collaborative.svg",
+    image: "/assets/images/collaborative.svg",
     title: "Collaborative Partnership",
     paragraph:
       "We value long-term relationships with our clients. We see ourselves as your digital partner, providing ongoing support, maintenance, and updates to ensure your digital products continue to thrive.",
@@ -175,19 +175,19 @@ useEffect(() => {
       </div>
 <SATrustedLogos
         subTitle="Trusted By 250+ Companies"
-        icon1Trusted="/SquareUp/assets/images/company-1.svg"
-        icon2Trusted="/SquareUp/assets/images/company-2.svg"
-        icon3Trusted="/SquareUp/assets/images/company-3.svg"
-        icon4Trusted="/SquareUp/assets/images/company-4.svg"
-        icon5Trusted="/SquareUp/assets/images/company-5.svg"
-        icon6Trusted="/SquareUp/assets/images/company-6.svg"
+        icon1Trusted="/assets/images/company-1.svg"
+        icon2Trusted="/assets/images/company-2.svg"
+        icon3Trusted="/assets/images/company-3.svg"
+        icon4Trusted="/assets/images/company-4.svg"
+        icon5Trusted="/assets/images/company-5.svg"
+        icon6Trusted="/assets/images/company-6.svg"
       />
 
       <div className="lm_whitespacing_x">
         <MmHeadOfSection
           title="Our Services"
           subtitle="Transform your brand with our innovative digital solutions that captivate and engage your audience."
-          bgImage="/SquareUp/assets/images/head-bg-1.jpg"
+          bgImage="/assets/images/head-bg-1.jpg"
         />
         <div className="lm-cards-container three-columns">
           {cards.map((card) => (
@@ -206,7 +206,7 @@ useEffect(() => {
         <MmHeadOfSection
           title="Why Choose SquareUp?"
           subtitle="Experience excellence in digital craftsmanship with our team of skilled professionals dedicated to delivering exceptional results."
-          bgImage="/SquareUp/assets/images/head-bg-2.png"
+          bgImage="/assets/images/head-bg-2.png"
         />
         <div className="lm-cards-container two-columns">
           {whyChooseCards.map((item) => (
@@ -224,7 +224,7 @@ useEffect(() => {
         <MmHeadOfSection
           title="What our Clients say About us"
           subtitle="At SquareUp, we take pride in delivering exceptional digital products and services that drive success for our clients.Here's what some of our satisfied clients have to say about thier experience working with us"
-          bgImage="/SquareUp/assets/images/head-bg-2.png"
+          bgImage="/assets/images/head-bg-2.png"
         />
 
         <HSH_SliderCards />
@@ -232,15 +232,15 @@ useEffect(() => {
         <MmHeadOfSection
           title="Frequently Asked Questions"
           subtitle="Still you have any questions? Contact our Team via hello@squareup.com"
-          bgImage="/SquareUp/assets/images/head-bg-4.png"
+          bgImage="/assets/images/head-bg-4.png"
         />
 
         <MmFAQCards faqData={faqData} />
       </div>
 
       <ThankyouSec
-        bgImage="/SquareUp/assets/images/head-bg-3.png"
-        image="/SquareUp/assets/images/Logo-colorfull.svg"
+        bgImage="/assets/images/head-bg-3.png"
+        image="/assets/images/Logo-colorfull.svg"
         title="Thank you for your Interest in SquareUp."
         subtitle="We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us."
         buttonText="Start Project"

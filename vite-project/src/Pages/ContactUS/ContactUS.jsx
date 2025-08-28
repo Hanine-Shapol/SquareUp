@@ -64,7 +64,7 @@ const ContactUS = () => {
         <MmHeadOfSection
           title="Contact Us"
           subtitle="Get in touch with us today and let us help you with any questions or inquiries you may have."
-          bgImage="/SquareUp/assets/images/head-bg-4.png"
+          bgImage="/assets/images/head-bg-4.png"
         />
       </div>
 
@@ -74,14 +74,14 @@ const ContactUS = () => {
         <MmHeadOfSection
           title="Frequently Asked Questions"
           subtitle="Still you have any questions? Contact our Team via hello@squareup.com"
-          bgImage="/SquareUp/assets/images/head-bg-4.png"
+          bgImage="/assets/images/head-bg-4.png"
         />
         <MmFAQCards faqData={faqData} />
       </div>
 
       <div className="lm_whitespacing_x">
         <SaTodaySquareUp
-          icon="/SquareUp/assets/images/Logo.svg"
+          icon="/assets/images/Logo.svg"
           title="Today, SquareUp Continues to Thrive as a Leading Digital Product Agency....."
           subtitle="Combining the power of design, engineering, and project management to create transformative digital experiences. They invite you to join them on their journey and discover how they can help bring your digital ideas to life."
           subtitleCta="Welcome to SquareUp"
